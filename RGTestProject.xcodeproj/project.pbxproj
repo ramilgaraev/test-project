@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9505696C1DFFD3030096458D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9505696B1DFFD3030096458D /* main.m */; };
-		9505696F1DFFD3030096458D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9505696E1DFFD3030096458D /* AppDelegate.m */; };
-		950569721DFFD3030096458D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950569711DFFD3030096458D /* ViewController.m */; };
+		9505696F1DFFD3030096458D /* RGTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9505696E1DFFD3030096458D /* RGTAppDelegate.m */; };
 		950569751DFFD3030096458D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950569731DFFD3030096458D /* Main.storyboard */; };
 		950569771DFFD3030096458D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 950569761DFFD3030096458D /* Assets.xcassets */; };
 		9505697A1DFFD3030096458D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950569781DFFD3030096458D /* LaunchScreen.storyboard */; };
@@ -29,10 +28,8 @@
 /* Begin PBXFileReference section */
 		950569671DFFD3030096458D /* RGTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9505696B1DFFD3030096458D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9505696D1DFFD3030096458D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		9505696E1DFFD3030096458D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		950569701DFFD3030096458D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		950569711DFFD3030096458D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9505696D1DFFD3030096458D /* RGTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGTAppDelegate.h; sourceTree = "<group>"; };
+		9505696E1DFFD3030096458D /* RGTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGTAppDelegate.m; sourceTree = "<group>"; };
 		950569741DFFD3030096458D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		950569761DFFD3030096458D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		950569791DFFD3030096458D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,10 +78,8 @@
 		950569691DFFD3030096458D /* RGTestProject */ = {
 			isa = PBXGroup;
 			children = (
-				9505696D1DFFD3030096458D /* AppDelegate.h */,
-				9505696E1DFFD3030096458D /* AppDelegate.m */,
-				950569701DFFD3030096458D /* ViewController.h */,
-				950569711DFFD3030096458D /* ViewController.m */,
+				9505696D1DFFD3030096458D /* RGTAppDelegate.h */,
+				9505696E1DFFD3030096458D /* RGTAppDelegate.m */,
 				950569731DFFD3030096458D /* Main.storyboard */,
 				950569761DFFD3030096458D /* Assets.xcassets */,
 				950569781DFFD3030096458D /* LaunchScreen.storyboard */,
@@ -215,8 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				950569721DFFD3030096458D /* ViewController.m in Sources */,
-				9505696F1DFFD3030096458D /* AppDelegate.m in Sources */,
+				9505696F1DFFD3030096458D /* RGTAppDelegate.m in Sources */,
 				9505696C1DFFD3030096458D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

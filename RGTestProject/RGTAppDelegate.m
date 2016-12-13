@@ -6,13 +6,13 @@
 //  Copyright © 2016 Ramil Garaev. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "RGTAppDelegate.h"
 
-@interface AppDelegate ()
+@interface RGTAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation RGTAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

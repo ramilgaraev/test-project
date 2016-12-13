@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AppDelegate.h
 //  RGTestProject
 //
 //  Created by Ramil Garaev on 13.12.16.
@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface RGTAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 
 @end
