@@ -7,35 +7,110 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BF3B3501C1469276229FB293CADBD54 /* Pods-RGTestProject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F898F9E228D806F64732583C91B01A66 /* Pods-RGTestProject-dummy.m */; };
-		9E71620EDBE085567F48D6FB026D3154 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		06B8A877F9AA97819BF9FF1DD6F65439 /* BNPodcastFeedParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2BAACC1692F2997211EBA56EF6E75F /* BNPodcastFeedParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09B8C73E262501347E3236C57C00A5C9 /* BNPodcastFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B295BB5B0FB802EDFF856C13DC086E8 /* BNPodcastFeedItem.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2DF93F9529E4D8A58510108FC0EDE8BD /* BNRSSFeedItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 63675ADE941BA314479CBBAE63ED3A8F /* BNRSSFeedItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34D81DD65AF4AC624B566C4C038884D9 /* BNRSSFeedURLSessionConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DE9C4073D30A9DA81A2264B23780D8 /* BNRSSFeedURLSessionConfiguration.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		36072C808B412B492CA1386654080285 /* BNRSSFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEF9E6B0B22BDC09EFC600025342061 /* BNRSSFeedParser.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		362DF1AF69AB99A46C82B163CA768CCD /* BNPodcastFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F82DF05E1D9BBAFE1308DB4B3DE6C80 /* BNPodcastFeed.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		419D463EC7192E6F1ECC10340FB657E4 /* NSDate+RSS.h in Headers */ = {isa = PBXBuildFile; fileRef = 09815B2D778741C007403A8DE01C06A7 /* NSDate+RSS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		457548C164A49A59C316C172544E564F /* BNPodcastFeedItem.h in Headers */ = {isa = PBXBuildFile; fileRef = EFC5B982DA5729345972461368F7545E /* BNPodcastFeedItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C5123C49052A50A3732E2396C6FC39F /* BNRSSFeedURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C61A41CFFC5ECBE47E1940CA066980 /* BNRSSFeedURLSessionManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		63F97B66742DD38283EE33C9AA4EB10B /* BNPodcastFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAD5439480CB2D93B83160F97A7ECAD /* BNPodcastFeedParser.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7145ECAEAF1F8D82491C121DDBD29C7F /* BNRSSFeedItemEnclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F47D0044B2C2FDD13C707C1690630 /* BNRSSFeedItemEnclosure.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7BDAF73AB71C64D711B6961EF6FE8452 /* BNPodcastFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 18B58E0DC673D6B012CB9DC1DA1E803F /* BNPodcastFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9533461FD83C61FC7713C7F06958E43B /* BNRSSFeedParser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C62B48460E5F34C9AAE30FB5E3A0334 /* BNRSSFeedParser-dummy.m */; };
+		9EBDCB8FDF68A00AA4A5B2A5ECACC71E /* BNRSSFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB586A996C5548054811826110E5E45 /* BNRSSFeed.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A067E1DF4F43AE898FF84B2B46AB8FE8 /* Pods-RGTestProject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F898F9E228D806F64732583C91B01A66 /* Pods-RGTestProject-dummy.m */; };
+		A747665284557BE5CC7A2A26ED37A14E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		AC226B960B2063182E553986B1F2F97D /* BNRSSFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = FC59F3563B396774817FC39800DE442A /* BNRSSFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4E38EB3514402614775CBC6ABF9EF60 /* BNRSSFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D20481A70624D69B90307E673BC31E9 /* BNRSSFeedItem.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C46FB40F4026937026ABC23160994483 /* BNRSSFeedURLSessionConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A719547547E0BD49917F079EF4199CD /* BNRSSFeedURLSessionConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7364B885AE8C756160088501B893D87 /* BNRSSFeedParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 31724BBCFFB942A6F3C3796449B57B77 /* BNRSSFeedParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB6F3389DE16B14B7843C6F75F165948 /* BNRSSFeedItemEnclosure.h in Headers */ = {isa = PBXBuildFile; fileRef = 87618E3CA5C225863CAAE80313D70A79 /* BNRSSFeedItemEnclosure.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E22A39B0E7AFF9F675557A1D73EE6769 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		E2CFD355BACD4BF4CE967D8CA1BD41D1 /* BNRSSFeedURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B25CA126134903382AC579C8923474B /* BNRSSFeedURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECFB5D176E4CE12957126D8F493545D9 /* NSDate+RSS.m in Sources */ = {isa = PBXBuildFile; fileRef = 162DFC46D259CD5867EBA12BA088051F /* NSDate+RSS.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4D2038AE8E9AFA3CD2D9E33C8EDB0049 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D41FE30975AA2E748D9805391E9564B0;
+			remoteInfo = BNRSSFeedParser;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		09815B2D778741C007403A8DE01C06A7 /* NSDate+RSS.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDate+RSS.h"; sourceTree = "<group>"; };
+		0D20481A70624D69B90307E673BC31E9 /* BNRSSFeedItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNRSSFeedItem.m; path = Feeds/BNRSSFeedItem.m; sourceTree = "<group>"; };
+		162DFC46D259CD5867EBA12BA088051F /* NSDate+RSS.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RSS.m"; sourceTree = "<group>"; };
 		18224B7B075A492ACF0227ACF209F9E4 /* Pods-RGTestProject-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RGTestProject-acknowledgements.markdown"; sourceTree = "<group>"; };
+		18B58E0DC673D6B012CB9DC1DA1E803F /* BNPodcastFeed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNPodcastFeed.h; path = Podcasts/BNPodcastFeed.h; sourceTree = "<group>"; };
+		2055AB1279B2E3AEFE930A2AEAE0E572 /* libPods-RGTestProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RGTestProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE38A859B739652559507F4993E03A1 /* Pods-RGTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RGTestProject.debug.xcconfig"; sourceTree = "<group>"; };
-		457E20EB6F165E5657E628BAC10D79A9 /* libPods-RGTestProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RGTestProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CEF9E6B0B22BDC09EFC600025342061 /* BNRSSFeedParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNRSSFeedParser.m; path = Feeds/BNRSSFeedParser.m; sourceTree = "<group>"; };
+		31724BBCFFB942A6F3C3796449B57B77 /* BNRSSFeedParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNRSSFeedParser.h; path = Feeds/BNRSSFeedParser.h; sourceTree = "<group>"; };
+		35C61A41CFFC5ECBE47E1940CA066980 /* BNRSSFeedURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNRSSFeedURLSessionManager.m; path = HTTP/BNRSSFeedURLSessionManager.m; sourceTree = "<group>"; };
+		40CA2634C00CE1FC0A84345FA9ACD0ED /* BNRSSFeedParser.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BNRSSFeedParser.xcconfig; sourceTree = "<group>"; };
+		4B295BB5B0FB802EDFF856C13DC086E8 /* BNPodcastFeedItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNPodcastFeedItem.m; path = Podcasts/BNPodcastFeedItem.m; sourceTree = "<group>"; };
+		4F1F47D0044B2C2FDD13C707C1690630 /* BNRSSFeedItemEnclosure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNRSSFeedItemEnclosure.m; path = Feeds/BNRSSFeedItemEnclosure.m; sourceTree = "<group>"; };
+		50276AAFBEECB85F89A418246D583855 /* BNRSSFeedParser-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BNRSSFeedParser-prefix.pch"; sourceTree = "<group>"; };
+		5B25CA126134903382AC579C8923474B /* BNRSSFeedURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNRSSFeedURLSessionManager.h; path = HTTP/BNRSSFeedURLSessionManager.h; sourceTree = "<group>"; };
+		5CB586A996C5548054811826110E5E45 /* BNRSSFeed.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNRSSFeed.m; path = Feeds/BNRSSFeed.m; sourceTree = "<group>"; };
+		63675ADE941BA314479CBBAE63ED3A8F /* BNRSSFeedItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNRSSFeedItem.h; path = Feeds/BNRSSFeedItem.h; sourceTree = "<group>"; };
+		6F82DF05E1D9BBAFE1308DB4B3DE6C80 /* BNPodcastFeed.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNPodcastFeed.m; path = Podcasts/BNPodcastFeed.m; sourceTree = "<group>"; };
 		741A97E7FC459D3571FEDB6BF69CF158 /* Pods-RGTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RGTestProject.release.xcconfig"; sourceTree = "<group>"; };
+		87618E3CA5C225863CAAE80313D70A79 /* BNRSSFeedItemEnclosure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNRSSFeedItemEnclosure.h; path = Feeds/BNRSSFeedItemEnclosure.h; sourceTree = "<group>"; };
+		8B2BAACC1692F2997211EBA56EF6E75F /* BNPodcastFeedParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNPodcastFeedParser.h; path = Podcasts/BNPodcastFeedParser.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9A719547547E0BD49917F079EF4199CD /* BNRSSFeedURLSessionConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNRSSFeedURLSessionConfiguration.h; path = HTTP/BNRSSFeedURLSessionConfiguration.h; sourceTree = "<group>"; };
+		9C62B48460E5F34C9AAE30FB5E3A0334 /* BNRSSFeedParser-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BNRSSFeedParser-dummy.m"; sourceTree = "<group>"; };
+		B0DE9C4073D30A9DA81A2264B23780D8 /* BNRSSFeedURLSessionConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNRSSFeedURLSessionConfiguration.m; path = HTTP/BNRSSFeedURLSessionConfiguration.m; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DFE8242715192FCC3F2233785D049D4D /* Pods-RGTestProject-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RGTestProject-acknowledgements.plist"; sourceTree = "<group>"; };
 		EC088E5A2D0AE94CEF05211C0D3C516D /* Pods-RGTestProject-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RGTestProject-resources.sh"; sourceTree = "<group>"; };
+		EFC5B982DA5729345972461368F7545E /* BNPodcastFeedItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNPodcastFeedItem.h; path = Podcasts/BNPodcastFeedItem.h; sourceTree = "<group>"; };
 		F898F9E228D806F64732583C91B01A66 /* Pods-RGTestProject-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RGTestProject-dummy.m"; sourceTree = "<group>"; };
+		FAA286BF0411BF639421003128A6679B /* libBNRSSFeedParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBNRSSFeedParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3F97F865EB0E4B2AC11B2E2CA13378 /* Pods-RGTestProject-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RGTestProject-frameworks.sh"; sourceTree = "<group>"; };
+		FC59F3563B396774817FC39800DE442A /* BNRSSFeed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNRSSFeed.h; path = Feeds/BNRSSFeed.h; sourceTree = "<group>"; };
+		FEAD5439480CB2D93B83160F97A7ECAD /* BNPodcastFeedParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNPodcastFeedParser.m; path = Podcasts/BNPodcastFeedParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8165D2F927F694B1F973ACBCABC3C8DC /* Frameworks */ = {
+		1B9232E4FA65437B3F75880092BFD95C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E71620EDBE085567F48D6FB026D3154 /* Foundation.framework in Frameworks */,
+				E22A39B0E7AFF9F675557A1D73EE6769 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D461C6D99D10575C55C60AD1CAB8A66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A747665284557BE5CC7A2A26ED37A14E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00729C3888866BDB4CFF0176A99B5D5F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				40CA2634C00CE1FC0A84345FA9ACD0ED /* BNRSSFeedParser.xcconfig */,
+				9C62B48460E5F34C9AAE30FB5E3A0334 /* BNRSSFeedParser-dummy.m */,
+				50276AAFBEECB85F89A418246D583855 /* BNRSSFeedParser-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BNRSSFeedParser";
+			sourceTree = "<group>";
+		};
 		2F79D419506E38B57FBCF8D67C0C87EE /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -52,22 +127,43 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		3E3144F4791F87BAEA95F99284E26887 /* BNRSSFeedParser */ = {
+			isa = PBXGroup;
+			children = (
+				18B58E0DC673D6B012CB9DC1DA1E803F /* BNPodcastFeed.h */,
+				6F82DF05E1D9BBAFE1308DB4B3DE6C80 /* BNPodcastFeed.m */,
+				EFC5B982DA5729345972461368F7545E /* BNPodcastFeedItem.h */,
+				4B295BB5B0FB802EDFF856C13DC086E8 /* BNPodcastFeedItem.m */,
+				8B2BAACC1692F2997211EBA56EF6E75F /* BNPodcastFeedParser.h */,
+				FEAD5439480CB2D93B83160F97A7ECAD /* BNPodcastFeedParser.m */,
+				FC59F3563B396774817FC39800DE442A /* BNRSSFeed.h */,
+				5CB586A996C5548054811826110E5E45 /* BNRSSFeed.m */,
+				63675ADE941BA314479CBBAE63ED3A8F /* BNRSSFeedItem.h */,
+				0D20481A70624D69B90307E673BC31E9 /* BNRSSFeedItem.m */,
+				87618E3CA5C225863CAAE80313D70A79 /* BNRSSFeedItemEnclosure.h */,
+				4F1F47D0044B2C2FDD13C707C1690630 /* BNRSSFeedItemEnclosure.m */,
+				31724BBCFFB942A6F3C3796449B57B77 /* BNRSSFeedParser.h */,
+				2CEF9E6B0B22BDC09EFC600025342061 /* BNRSSFeedParser.m */,
+				9A719547547E0BD49917F079EF4199CD /* BNRSSFeedURLSessionConfiguration.h */,
+				B0DE9C4073D30A9DA81A2264B23780D8 /* BNRSSFeedURLSessionConfiguration.m */,
+				5B25CA126134903382AC579C8923474B /* BNRSSFeedURLSessionManager.h */,
+				35C61A41CFFC5ECBE47E1940CA066980 /* BNRSSFeedURLSessionManager.m */,
+				09815B2D778741C007403A8DE01C06A7 /* NSDate+RSS.h */,
+				162DFC46D259CD5867EBA12BA088051F /* NSDate+RSS.m */,
+				00729C3888866BDB4CFF0176A99B5D5F /* Support Files */,
+			);
+			path = BNRSSFeedParser;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				9AB74161A879EAB83478D134E032E278 /* Products */,
+				F16AD89FE41947841E69C7E141927D37 /* Pods */,
+				D50C531E997A518C8EBB6DFD8415315B /* Products */,
 				2F79D419506E38B57FBCF8D67C0C87EE /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		9AB74161A879EAB83478D134E032E278 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				457E20EB6F165E5657E628BAC10D79A9 /* libPods-RGTestProject.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -76,6 +172,15 @@
 				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D50C531E997A518C8EBB6DFD8415315B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAA286BF0411BF639421003128A6679B /* libBNRSSFeedParser.a */,
+				2055AB1279B2E3AEFE930A2AEAE0E572 /* libPods-RGTestProject.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		EF1E8494F2E432767B1D7C94CB2C1687 /* Pods-RGTestProject */ = {
@@ -93,23 +198,69 @@
 			path = "Target Support Files/Pods-RGTestProject";
 			sourceTree = "<group>";
 		};
+		F16AD89FE41947841E69C7E141927D37 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E3144F4791F87BAEA95F99284E26887 /* BNRSSFeedParser */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		0A5D370AD14422A44001769CF1F37375 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BDAF73AB71C64D711B6961EF6FE8452 /* BNPodcastFeed.h in Headers */,
+				457548C164A49A59C316C172544E564F /* BNPodcastFeedItem.h in Headers */,
+				06B8A877F9AA97819BF9FF1DD6F65439 /* BNPodcastFeedParser.h in Headers */,
+				AC226B960B2063182E553986B1F2F97D /* BNRSSFeed.h in Headers */,
+				2DF93F9529E4D8A58510108FC0EDE8BD /* BNRSSFeedItem.h in Headers */,
+				DB6F3389DE16B14B7843C6F75F165948 /* BNRSSFeedItemEnclosure.h in Headers */,
+				D7364B885AE8C756160088501B893D87 /* BNRSSFeedParser.h in Headers */,
+				C46FB40F4026937026ABC23160994483 /* BNRSSFeedURLSessionConfiguration.h in Headers */,
+				E2CFD355BACD4BF4CE967D8CA1BD41D1 /* BNRSSFeedURLSessionManager.h in Headers */,
+				419D463EC7192E6F1ECC10340FB657E4 /* NSDate+RSS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		1E2EE5AFD332E5504A21EC3F42A161E0 /* Pods-RGTestProject */ = {
+		D41FE30975AA2E748D9805391E9564B0 /* BNRSSFeedParser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9167D72A56C57E4E340E87090ED1E6AE /* Build configuration list for PBXNativeTarget "Pods-RGTestProject" */;
+			buildConfigurationList = C0E7BBFF7CC46DA2F3A6ABB4A369E7A9 /* Build configuration list for PBXNativeTarget "BNRSSFeedParser" */;
 			buildPhases = (
-				36823E19C7BA95039E0BCEED165BF030 /* Sources */,
-				8165D2F927F694B1F973ACBCABC3C8DC /* Frameworks */,
+				6B4E7EAA2D870A74E8F2C1968548C6F7 /* Sources */,
+				6D461C6D99D10575C55C60AD1CAB8A66 /* Frameworks */,
+				0A5D370AD14422A44001769CF1F37375 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = BNRSSFeedParser;
+			productName = BNRSSFeedParser;
+			productReference = FAA286BF0411BF639421003128A6679B /* libBNRSSFeedParser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E40D33383A727D29102BA7D0F957ED02 /* Pods-RGTestProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03A06F219E36D2C8E76CBE5F4AB931E9 /* Build configuration list for PBXNativeTarget "Pods-RGTestProject" */;
+			buildPhases = (
+				B8504D554315010A19D3FBA04C0EAF03 /* Sources */,
+				1B9232E4FA65437B3F75880092BFD95C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D78E2EE13976DCEF3678BA676C4D9E60 /* PBXTargetDependency */,
+			);
 			name = "Pods-RGTestProject";
 			productName = "Pods-RGTestProject";
-			productReference = 457E20EB6F165E5657E628BAC10D79A9 /* libPods-RGTestProject.a */;
+			productReference = 2055AB1279B2E3AEFE930A2AEAE0E572 /* libPods-RGTestProject.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -129,25 +280,53 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 9AB74161A879EAB83478D134E032E278 /* Products */;
+			productRefGroup = D50C531E997A518C8EBB6DFD8415315B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1E2EE5AFD332E5504A21EC3F42A161E0 /* Pods-RGTestProject */,
+				D41FE30975AA2E748D9805391E9564B0 /* BNRSSFeedParser */,
+				E40D33383A727D29102BA7D0F957ED02 /* Pods-RGTestProject */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		36823E19C7BA95039E0BCEED165BF030 /* Sources */ = {
+		6B4E7EAA2D870A74E8F2C1968548C6F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BF3B3501C1469276229FB293CADBD54 /* Pods-RGTestProject-dummy.m in Sources */,
+				362DF1AF69AB99A46C82B163CA768CCD /* BNPodcastFeed.m in Sources */,
+				09B8C73E262501347E3236C57C00A5C9 /* BNPodcastFeedItem.m in Sources */,
+				63F97B66742DD38283EE33C9AA4EB10B /* BNPodcastFeedParser.m in Sources */,
+				9EBDCB8FDF68A00AA4A5B2A5ECACC71E /* BNRSSFeed.m in Sources */,
+				B4E38EB3514402614775CBC6ABF9EF60 /* BNRSSFeedItem.m in Sources */,
+				7145ECAEAF1F8D82491C121DDBD29C7F /* BNRSSFeedItemEnclosure.m in Sources */,
+				9533461FD83C61FC7713C7F06958E43B /* BNRSSFeedParser-dummy.m in Sources */,
+				36072C808B412B492CA1386654080285 /* BNRSSFeedParser.m in Sources */,
+				34D81DD65AF4AC624B566C4C038884D9 /* BNRSSFeedURLSessionConfiguration.m in Sources */,
+				5C5123C49052A50A3732E2396C6FC39F /* BNRSSFeedURLSessionManager.m in Sources */,
+				ECFB5D176E4CE12957126D8F493545D9 /* NSDate+RSS.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8504D554315010A19D3FBA04C0EAF03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A067E1DF4F43AE898FF84B2B46AB8FE8 /* Pods-RGTestProject-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D78E2EE13976DCEF3678BA676C4D9E60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BNRSSFeedParser;
+			target = D41FE30975AA2E748D9805391E9564B0 /* BNRSSFeedParser */;
+			targetProxy = 4D2038AE8E9AFA3CD2D9E33C8EDB0049 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		034014829C1E4434983CF3A690C12017 /* Debug */ = {
@@ -192,17 +371,17 @@
 			};
 			name = Debug;
 		};
-		1F328E35AFCDD8801E75F8669C31D01C /* Release */ = {
+		1247CD306B08F9F2051F362064D4A6FB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 741A97E7FC459D3571FEDB6BF69CF158 /* Pods-RGTestProject.release.xcconfig */;
+			baseConfigurationReference = 2CE38A859B739652559507F4993E03A1 /* Pods-RGTestProject.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -211,7 +390,28 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
+		};
+		527E4294FF0E6481D75E2B4C702DEFC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40CA2634C00CE1FC0A84345FA9ACD0ED /* BNRSSFeedParser.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BNRSSFeedParser/BNRSSFeedParser-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
 		};
 		C7E474A03CAE21F1CB6046E7344C59BD /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -251,17 +451,17 @@
 			};
 			name = Release;
 		};
-		DC43534ED8239755EB71C46BFC919E01 /* Debug */ = {
+		CD6B9681F12A883B7E6023EFACAF4021 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CE38A859B739652559507F4993E03A1 /* Pods-RGTestProject.debug.xcconfig */;
+			baseConfigurationReference = 741A97E7FC459D3571FEDB6BF69CF158 /* Pods-RGTestProject.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -270,11 +470,41 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
+		};
+		DD81B636ABDD57B0E625DBC3E26924DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40CA2634C00CE1FC0A84345FA9ACD0ED /* BNRSSFeedParser.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BNRSSFeedParser/BNRSSFeedParser-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		03A06F219E36D2C8E76CBE5F4AB931E9 /* Build configuration list for PBXNativeTarget "Pods-RGTestProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1247CD306B08F9F2051F362064D4A6FB /* Debug */,
+				CD6B9681F12A883B7E6023EFACAF4021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -284,11 +514,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9167D72A56C57E4E340E87090ED1E6AE /* Build configuration list for PBXNativeTarget "Pods-RGTestProject" */ = {
+		C0E7BBFF7CC46DA2F3A6ABB4A369E7A9 /* Build configuration list for PBXNativeTarget "BNRSSFeedParser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC43534ED8239755EB71C46BFC919E01 /* Debug */,
-				1F328E35AFCDD8801E75F8669C31D01C /* Release */,
+				527E4294FF0E6481D75E2B4C702DEFC4 /* Debug */,
+				DD81B636ABDD57B0E625DBC3E26924DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
