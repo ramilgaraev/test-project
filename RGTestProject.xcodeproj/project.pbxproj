@@ -105,15 +105,10 @@
 		950569691DFFD3030096458D /* RGTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				95F6BD511E02D61100E49486 /* UI layer */,
 				955778311E0293BC007EAA55 /* common */,
 				955778291E015809007EAA55 /* API layer */,
 				955778271E01575C007EAA55 /* BL layer */,
-				9505696D1DFFD3030096458D /* RGTAppDelegate.h */,
-				9505696E1DFFD3030096458D /* RGTAppDelegate.m */,
-				950569731DFFD3030096458D /* Main.storyboard */,
-				950569761DFFD3030096458D /* Assets.xcassets */,
-				950569781DFFD3030096458D /* LaunchScreen.storyboard */,
-				9505697B1DFFD3030096458D /* Info.plist */,
 				9505696A1DFFD3030096458D /* Supporting Files */,
 			);
 			path = RGTestProject;
@@ -122,6 +117,9 @@
 		9505696A1DFFD3030096458D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9505696D1DFFD3030096458D /* RGTAppDelegate.h */,
+				9505696E1DFFD3030096458D /* RGTAppDelegate.m */,
+				9505697B1DFFD3030096458D /* Info.plist */,
 				9505696B1DFFD3030096458D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -171,6 +169,24 @@
 				955778331E0293D6007EAA55 /* NSError+RGTErrorCodes.m */,
 			);
 			name = common;
+			sourceTree = "<group>";
+		};
+		95F6BD511E02D61100E49486 /* UI layer */ = {
+			isa = PBXGroup;
+			children = (
+				95F6BD521E02D62B00E49486 /* mediafiles */,
+				950569731DFFD3030096458D /* Main.storyboard */,
+				950569781DFFD3030096458D /* LaunchScreen.storyboard */,
+			);
+			name = "UI layer";
+			sourceTree = "<group>";
+		};
+		95F6BD521E02D62B00E49486 /* mediafiles */ = {
+			isa = PBXGroup;
+			children = (
+				950569761DFFD3030096458D /* Assets.xcassets */,
+			);
+			name = mediafiles;
 			sourceTree = "<group>";
 		};
 		C8A4BB060A29F5355E09E9C9 /* Pods */ = {
