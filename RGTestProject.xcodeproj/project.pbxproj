@@ -12,7 +12,11 @@
 		950569751DFFD3030096458D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950569731DFFD3030096458D /* Main.storyboard */; };
 		950569771DFFD3030096458D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 950569761DFFD3030096458D /* Assets.xcassets */; };
 		9505697A1DFFD3030096458D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950569781DFFD3030096458D /* LaunchScreen.storyboard */; };
-		950569851DFFD3040096458D /* RGTestProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 950569841DFFD3040096458D /* RGTestProjectTests.m */; };
+		9557782C1E0281F1007EAA55 /* RGTArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9557782B1E0281F1007EAA55 /* RGTArticle.m */; };
+		9557782F1E028380007EAA55 /* RGTAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9557782E1E028380007EAA55 /* RGTAPIClient.m */; };
+		955778341E0293D6007EAA55 /* NSError+RGTErrorCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 955778331E0293D6007EAA55 /* NSError+RGTErrorCodes.m */; };
+		95F6BD4E1E02A24900E49486 /* RGTCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4D1E02A24900E49486 /* RGTCore.m */; };
+		95F6BD501E02BF3300E49486 /* RGTAPIClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */; };
 		BF3BF2AE80BCA2583186996C /* libPods-RGTestProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EB4F778FC32F4524913488 /* libPods-RGTestProject.a */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +42,16 @@
 		950569791DFFD3030096458D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9505697B1DFFD3030096458D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		950569801DFFD3040096458D /* RGTestProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RGTestProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		950569841DFFD3040096458D /* RGTestProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGTestProjectTests.m; sourceTree = "<group>"; };
 		950569861DFFD3040096458D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9557782A1E0281F1007EAA55 /* RGTArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTArticle.h; sourceTree = "<group>"; };
+		9557782B1E0281F1007EAA55 /* RGTArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticle.m; sourceTree = "<group>"; };
+		9557782D1E028380007EAA55 /* RGTAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTAPIClient.h; sourceTree = "<group>"; };
+		9557782E1E028380007EAA55 /* RGTAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTAPIClient.m; sourceTree = "<group>"; };
+		955778321E0293D6007EAA55 /* NSError+RGTErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+RGTErrorCodes.h"; sourceTree = "<group>"; };
+		955778331E0293D6007EAA55 /* NSError+RGTErrorCodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+RGTErrorCodes.m"; sourceTree = "<group>"; };
+		95F6BD4C1E02A24900E49486 /* RGTCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTCore.h; sourceTree = "<group>"; };
+		95F6BD4D1E02A24900E49486 /* RGTCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTCore.m; sourceTree = "<group>"; };
+		95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTAPIClientTests.m; sourceTree = "<group>"; };
 		B6167FFF3FABB918D4977A44 /* Pods-RGTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RGTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RGTestProject/Pods-RGTestProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +105,9 @@
 		950569691DFFD3030096458D /* RGTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				955778311E0293BC007EAA55 /* common */,
+				955778291E015809007EAA55 /* API layer */,
+				955778271E01575C007EAA55 /* BL layer */,
 				9505696D1DFFD3030096458D /* RGTAppDelegate.h */,
 				9505696E1DFFD3030096458D /* RGTAppDelegate.m */,
 				950569731DFFD3030096458D /* Main.storyboard */,
@@ -115,10 +130,47 @@
 		950569831DFFD3040096458D /* RGTestProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				950569841DFFD3040096458D /* RGTestProjectTests.m */,
 				950569861DFFD3040096458D /* Info.plist */,
+				95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */,
 			);
 			path = RGTestProjectTests;
+			sourceTree = "<group>";
+		};
+		955778271E01575C007EAA55 /* BL layer */ = {
+			isa = PBXGroup;
+			children = (
+				955778281E0157B6007EAA55 /* models */,
+				95F6BD4C1E02A24900E49486 /* RGTCore.h */,
+				95F6BD4D1E02A24900E49486 /* RGTCore.m */,
+			);
+			name = "BL layer";
+			sourceTree = "<group>";
+		};
+		955778281E0157B6007EAA55 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				9557782A1E0281F1007EAA55 /* RGTArticle.h */,
+				9557782B1E0281F1007EAA55 /* RGTArticle.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		955778291E015809007EAA55 /* API layer */ = {
+			isa = PBXGroup;
+			children = (
+				9557782D1E028380007EAA55 /* RGTAPIClient.h */,
+				9557782E1E028380007EAA55 /* RGTAPIClient.m */,
+			);
+			name = "API layer";
+			sourceTree = "<group>";
+		};
+		955778311E0293BC007EAA55 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				955778321E0293D6007EAA55 /* NSError+RGTErrorCodes.h */,
+				955778331E0293D6007EAA55 /* NSError+RGTErrorCodes.m */,
+			);
+			name = common;
 			sourceTree = "<group>";
 		};
 		C8A4BB060A29F5355E09E9C9 /* Pods */ = {
@@ -285,8 +337,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F6BD4E1E02A24900E49486 /* RGTCore.m in Sources */,
+				955778341E0293D6007EAA55 /* NSError+RGTErrorCodes.m in Sources */,
 				9505696F1DFFD3030096458D /* RGTAppDelegate.m in Sources */,
+				9557782C1E0281F1007EAA55 /* RGTArticle.m in Sources */,
 				9505696C1DFFD3030096458D /* main.m in Sources */,
+				9557782F1E028380007EAA55 /* RGTAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				950569851DFFD3040096458D /* RGTestProjectTests.m in Sources */,
+				95F6BD501E02BF3300E49486 /* RGTAPIClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

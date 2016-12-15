@@ -1,0 +1,13 @@
+//
+//  RGTArticle.m
+//  RGTestProject
+//
+//  Created by Ramil Garaev on 15.12.16.
+//  Copyright © 2016 Ramil Garaev. All rights reserved.
+//
+
+#import "RGTArticle.h"
+
+@implementation RGTArticle
+
+@end
