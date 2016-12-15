@@ -7,15 +7,18 @@
 //
 
 #import "RGTCore.h"
+#import "RGTAPIClient.h"
 
 @interface RGTCore()
 {
-    NSMutableArray<RGTArticle*>* _articles;
+    NSDate* _lastArticlesFetchingDate;
 }
 
 @end
 
 @implementation RGTCore
+
+@synthesize articles = _articles;
 
 +(instancetype) sharedInstance
 {
@@ -32,19 +35,36 @@
     self = [super init];
     if (self)
     {
-        _articles = [NSMutableArray new];
     }
     return self;
 }
 
 -(NSArray<RGTArticle *> *)articles
 {
-    return [NSArray arrayWithArray: _articles];
+    return _articles;
 }
 
--(void) updateArticlesWithCompletionBlock: (void(^)(BOOL success)) completionBlock
+-(void) updateArticlesWithCompletionBlock: (void(^)(NSError* error)) completionBlock
 {
-#warning todo
+    [RGTAPIClient fetchNewArticlesSince: _lastArticlesFetchingDate
+                         withCompletion:^(NSArray<RGTArticle *> * _Nullable fetchedArticles, NSError * _Nullable error) {
+                             if (error)
+                             {
+                                 completionBlock(error);
+                             }
+                             else
+                             {
+                                 if (fetchedArticles.count > 0)
+                                 {
+                                     NSMutableArray* newArray = [NSMutableArray arrayWithArray: fetchedArticles];
+                                     [newArray addObjectsFromArray: _articles];
+                                     _articles = [NSArray arrayWithArray: newArray];
+                                     _lastArticlesFetchingDate = [NSDate date];
+                                     completionBlock(nil);
+                                 }
+                             }
+
+                         }];
 }
 
 @end

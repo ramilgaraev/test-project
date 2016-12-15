@@ -16,9 +16,9 @@
 +(instancetype) sharedInstance;
 
 /*! @description Available articles */
-@property (nonatomic, readonly) NSArray<RGTArticle*>* articles;
+@property (readonly) NSArray<RGTArticle*>* articles;
 
 
--(void) updateArticlesWithCompletionBlock: (void(^)(BOOL success)) completionBlock;
+-(void) updateArticlesWithCompletionBlock: (void(^)(NSError* error)) completionBlock;
 
 @end

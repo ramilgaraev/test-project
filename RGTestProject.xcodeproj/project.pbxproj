@@ -17,6 +17,7 @@
 		955778341E0293D6007EAA55 /* NSError+RGTErrorCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 955778331E0293D6007EAA55 /* NSError+RGTErrorCodes.m */; };
 		95F6BD4E1E02A24900E49486 /* RGTCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4D1E02A24900E49486 /* RGTCore.m */; };
 		95F6BD501E02BF3300E49486 /* RGTAPIClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */; };
+		95F6BD541E02DCD300E49486 /* RGTCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD531E02DCD300E49486 /* RGTCoreTests.m */; };
 		BF3BF2AE80BCA2583186996C /* libPods-RGTestProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EB4F778FC32F4524913488 /* libPods-RGTestProject.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		95F6BD4C1E02A24900E49486 /* RGTCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTCore.h; sourceTree = "<group>"; };
 		95F6BD4D1E02A24900E49486 /* RGTCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTCore.m; sourceTree = "<group>"; };
 		95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTAPIClientTests.m; sourceTree = "<group>"; };
+		95F6BD531E02DCD300E49486 /* RGTCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTCoreTests.m; sourceTree = "<group>"; };
 		B6167FFF3FABB918D4977A44 /* Pods-RGTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RGTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RGTestProject/Pods-RGTestProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 			children = (
 				950569861DFFD3040096458D /* Info.plist */,
 				95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */,
+				95F6BD531E02DCD300E49486 /* RGTCoreTests.m */,
 			);
 			path = RGTestProjectTests;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F6BD541E02DCD300E49486 /* RGTCoreTests.m in Sources */,
 				95F6BD501E02BF3300E49486 /* RGTAPIClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
