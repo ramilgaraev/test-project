@@ -60,8 +60,8 @@
                                      [newArray addObjectsFromArray: _articles];
                                      _articles = [NSArray arrayWithArray: newArray];
                                      _lastArticlesFetchingDate = [NSDate date];
-                                     completionBlock(nil);
                                  }
+                                 completionBlock(nil);
                              }
 
                          }];
