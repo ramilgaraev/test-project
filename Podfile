@@ -4,4 +4,5 @@ inhibit_all_warnings!
 
 target ‘RGTestProject’ do
      pod 'BNRSSFeedParser', '~> 2.1'
+     pod 'SVProgressHUD'
 end

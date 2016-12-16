@@ -11,6 +11,7 @@
 #import "RGTArticle.h"
 #import "RGTArticleContentViewController.h"
 #import "RGTArticlesTableViewCell.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface RGTArticlesTableViewController ()
 {
@@ -28,16 +29,16 @@
     [self.refreshControl addTarget: self
                             action: @selector(fetchNewArticles)
                   forControlEvents: UIControlEventValueChanged];
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear: animated];
+    [SVProgressHUD setCornerRadius: 8.0f];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
+    [SVProgressHUD setContainerView: self.view];
+    [SVProgressHUD showWithStatus:@"Обновляем.."];
     [[RGTCore sharedInstance] updateArticlesWithCompletionBlock: ^(NSError *error) {
         if (!error)
         {
             _articles = [[RGTCore sharedInstance] articles];
             [self.tableView reloadData];
+            [SVProgressHUD dismiss];
         }
     }];
 }

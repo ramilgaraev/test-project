@@ -9,8 +9,9 @@
 #import "RGTArticleContentViewController.h"
 #import "RGTArticle.h"
 @import WebKit;
+#import <SVProgressHUD/SVProgressHUD.h>
 
-@interface RGTArticleContentViewController ()
+@interface RGTArticleContentViewController ()<WKNavigationDelegate>
 
 @property (nonatomic) WKWebView* webView;
 
@@ -22,7 +23,7 @@
     [super viewDidLoad];
     self.webView = [[WKWebView alloc] initWithFrame: CGRectZero];
     [self.view addSubview: self.webView];
-
+    [self.webView setNavigationDelegate: self];
     // Do any additional setup after loading the view.
 }
 
@@ -38,6 +39,16 @@
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.webView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0]];
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.webView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0]];
     if (self.article)
+    {
+        [SVProgressHUD setContainerView: self.webView];
+        [SVProgressHUD showWithStatus:@"Загружаем.."];
         [self.webView loadRequest: [NSURLRequest requestWithURL: self.article.link]];
+    }
 }
+
+-(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
+{
+    [SVProgressHUD dismiss];
+}
+
 @end
