@@ -44,13 +44,13 @@
     return _articles;
 }
 
--(void) updateArticlesWithCompletionBlock: (void(^)(NSError* error)) completionBlock
+-(void) updateArticlesWithCompletionBlock: (void(^)(NSError* error, NSArray<RGTArticle*>* newArticles)) completionBlock
 {
-    [RGTAPIClient fetchNewArticlesSince: _lastArticlesFetchingDate
+    [RGTAPIClient fetchNewArticlesSince: nil//_lastArticlesFetchingDate
                          withCompletion:^(NSArray<RGTArticle *> * _Nullable fetchedArticles, NSError * _Nullable error) {
                              if (error)
                              {
-                                 completionBlock(error);
+                                 completionBlock(error, nil);
                              }
                              else
                              {
@@ -61,7 +61,7 @@
                                      _articles = [NSArray arrayWithArray: newArray];
                                      _lastArticlesFetchingDate = [NSDate date];
                                  }
-                                 completionBlock(nil);
+                                 completionBlock(nil, fetchedArticles);
                              }
 
                          }];

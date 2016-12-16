@@ -19,6 +19,6 @@
 @property (readonly) NSArray<RGTArticle*>* articles;
 
 
--(void) updateArticlesWithCompletionBlock: (void(^)(NSError* error)) completionBlock;
+-(void) updateArticlesWithCompletionBlock: (void(^)(NSError* error, NSArray<RGTArticle*>* newArticles)) completionBlock;
 
 @end

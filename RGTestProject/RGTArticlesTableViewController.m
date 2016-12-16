@@ -32,7 +32,7 @@
     [SVProgressHUD setCornerRadius: 8.0f];
     [SVProgressHUD setContainerView: self.view];
     [SVProgressHUD showWithStatus:@"Обновляем"];
-    [[RGTCore sharedInstance] updateArticlesWithCompletionBlock: ^(NSError *error) {
+    [[RGTCore sharedInstance] updateArticlesWithCompletionBlock: ^(NSError *error, NSArray<RGTArticle*>* newArticles) {
         if (!error)
         {
             _articles = [[RGTCore sharedInstance] articles];
@@ -47,12 +47,20 @@
 
 -(void) fetchNewArticles
 {
-    [[RGTCore sharedInstance] updateArticlesWithCompletionBlock: ^(NSError *error) {
+    [[RGTCore sharedInstance] updateArticlesWithCompletionBlock: ^(NSError *error, NSArray<RGTArticle*>* newArticles) {
         if (!error)
         {
             _articles = [[RGTCore sharedInstance] articles];
             [self.refreshControl endRefreshing];
-            [self.tableView reloadData];
+            NSMutableArray* indexPathes = [NSMutableArray arrayWithCapacity: newArticles.count];
+            for (NSInteger i = 0; i < newArticles.count; i++) {
+                [indexPathes addObject: [NSIndexPath indexPathForRow: i
+                                                           inSection: 0]];
+            }
+            [self.tableView beginUpdates];
+            [self.tableView insertRowsAtIndexPaths: indexPathes
+                                  withRowAnimation: UITableViewRowAnimationFade];
+            [self.tableView endUpdates];
         }
     }];
 }
