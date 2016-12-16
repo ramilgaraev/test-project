@@ -28,7 +28,7 @@ static NSString* RSSURL = @"http://4pda.ru/feed";
                      NSMutableArray<RGTArticle*>* articles = [NSMutableArray new];
                      for (BNRSSFeedItem* item in feed.items) {
                          RGTArticle* article = [RGTArticle new];
-                         article.guid = item.guid;
+                         article.publicationDate = item.pubDate;
                          article.title = item.title;
                          article.link = item.link;
                          [articles addObject: article];

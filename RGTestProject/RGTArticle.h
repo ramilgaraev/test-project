@@ -11,8 +11,8 @@
 /*! @description Class contains article from 4pda.ru */
 @interface RGTArticle : NSObject
 
-/*! @description  Unique identifier of the article */
-@property (nonatomic) NSString* guid;
+/*! @description  Creation date of the article */
+@property (nonatomic) NSDate* publicationDate;
 /*! @description A title of the article */
 @property (nonatomic) NSString* title;
 /*! @description A link of the article */
