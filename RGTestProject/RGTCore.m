@@ -56,9 +56,7 @@
                              {
                                  if (fetchedArticles.count > 0)
                                  {
-                                     NSMutableArray* newArray = [NSMutableArray arrayWithArray: fetchedArticles];
-                                     [newArray addObjectsFromArray: _articles];
-                                     _articles = [NSArray arrayWithArray: newArray];
+                                     _articles = [fetchedArticles arrayByAddingObjectsFromArray: _articles];
                                      _lastArticlesFetchingDate = [NSDate date];
                                  }
                                  completionBlock(nil, fetchedArticles);
