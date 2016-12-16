@@ -18,6 +18,8 @@
 		95F6BD4E1E02A24900E49486 /* RGTCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4D1E02A24900E49486 /* RGTCore.m */; };
 		95F6BD501E02BF3300E49486 /* RGTAPIClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */; };
 		95F6BD541E02DCD300E49486 /* RGTCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD531E02DCD300E49486 /* RGTCoreTests.m */; };
+		95F6BD571E02E36600E49486 /* RGTArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD561E02E36600E49486 /* RGTArticlesViewController.m */; };
+		95F6BD5D1E032A8700E49486 /* RGTArticlesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD5C1E032A8600E49486 /* RGTArticlesTableViewController.m */; };
 		BF3BF2AE80BCA2583186996C /* libPods-RGTestProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EB4F778FC32F4524913488 /* libPods-RGTestProject.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,10 @@
 		95F6BD4D1E02A24900E49486 /* RGTCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTCore.m; sourceTree = "<group>"; };
 		95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTAPIClientTests.m; sourceTree = "<group>"; };
 		95F6BD531E02DCD300E49486 /* RGTCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTCoreTests.m; sourceTree = "<group>"; };
+		95F6BD551E02E36600E49486 /* RGTArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTArticlesViewController.h; sourceTree = "<group>"; };
+		95F6BD561E02E36600E49486 /* RGTArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticlesViewController.m; sourceTree = "<group>"; };
+		95F6BD5B1E032A8600E49486 /* RGTArticlesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTArticlesTableViewController.h; sourceTree = "<group>"; };
+		95F6BD5C1E032A8600E49486 /* RGTArticlesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticlesTableViewController.m; sourceTree = "<group>"; };
 		B6167FFF3FABB918D4977A44 /* Pods-RGTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RGTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RGTestProject/Pods-RGTestProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +183,7 @@
 		95F6BD511E02D61100E49486 /* UI layer */ = {
 			isa = PBXGroup;
 			children = (
+				95F6BD581E02E51300E49486 /* controllers */,
 				95F6BD521E02D62B00E49486 /* mediafiles */,
 				950569731DFFD3030096458D /* Main.storyboard */,
 				950569781DFFD3030096458D /* LaunchScreen.storyboard */,
@@ -190,6 +197,33 @@
 				950569761DFFD3030096458D /* Assets.xcassets */,
 			);
 			name = mediafiles;
+			sourceTree = "<group>";
+		};
+		95F6BD581E02E51300E49486 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				95F6BD5A1E02E52C00E49486 /* articles */,
+				95F6BD591E02E52500E49486 /* settings */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		95F6BD591E02E52500E49486 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = settings;
+			sourceTree = "<group>";
+		};
+		95F6BD5A1E02E52C00E49486 /* articles */ = {
+			isa = PBXGroup;
+			children = (
+				95F6BD551E02E36600E49486 /* RGTArticlesViewController.h */,
+				95F6BD561E02E36600E49486 /* RGTArticlesViewController.m */,
+				95F6BD5B1E032A8600E49486 /* RGTArticlesTableViewController.h */,
+				95F6BD5C1E032A8600E49486 /* RGTArticlesTableViewController.m */,
+			);
+			name = articles;
 			sourceTree = "<group>";
 		};
 		C8A4BB060A29F5355E09E9C9 /* Pods */ = {
@@ -358,7 +392,9 @@
 			files = (
 				95F6BD4E1E02A24900E49486 /* RGTCore.m in Sources */,
 				955778341E0293D6007EAA55 /* NSError+RGTErrorCodes.m in Sources */,
+				95F6BD571E02E36600E49486 /* RGTArticlesViewController.m in Sources */,
 				9505696F1DFFD3030096458D /* RGTAppDelegate.m in Sources */,
+				95F6BD5D1E032A8700E49486 /* RGTArticlesTableViewController.m in Sources */,
 				9557782C1E0281F1007EAA55 /* RGTArticle.m in Sources */,
 				9505696C1DFFD3030096458D /* main.m in Sources */,
 				9557782F1E028380007EAA55 /* RGTAPIClient.m in Sources */,
@@ -422,6 +458,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -469,6 +506,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -499,6 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4PNWMMZ23N;
 				INFOPLIST_FILE = RGTestProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rgaraev.RGTestProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -512,6 +551,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4PNWMMZ23N;
 				INFOPLIST_FILE = RGTestProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rgaraev.RGTestProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
