@@ -90,7 +90,10 @@
 
 -(BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
 {
-    return YES;
+    if (![(RGTArticleContentViewController*)secondaryViewController article])
+        return YES;
+    else
+        return NO;
 }
 
 
