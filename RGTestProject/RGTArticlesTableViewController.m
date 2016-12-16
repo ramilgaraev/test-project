@@ -9,6 +9,8 @@
 #import "RGTArticlesTableViewController.h"
 #import "RGTCore.h"
 #import "RGTArticle.h"
+#import "RGTArticleContentViewController.h"
+#import "RGTArticlesTableViewCell.h"
 
 @interface RGTArticlesTableViewController ()
 {
@@ -21,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.splitViewController.delegate = self;
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -48,22 +51,28 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"RGTArticleCell"
+    RGTArticlesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"RGTArticleCell"
                                                             forIndexPath: indexPath];
-    RGTArticle* article = _articles[indexPath.row];
-    cell.textLabel.text = article.title;
+    [cell fillWithArticle: _articles[indexPath.row]];
     return cell;
 }
 
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    RGTArticleContentViewController* vc = (RGTArticleContentViewController*)segue.destinationViewController;
+    vc.article = [(RGTArticlesTableViewCell*)sender article];
 }
-*/
+
+
+#pragma mark 
+
+-(BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
+{
+    return YES;
+}
+
 
 @end

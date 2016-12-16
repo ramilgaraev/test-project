@@ -30,6 +30,7 @@ static NSString* RSSURL = @"http://4pda.ru/feed";
                          RGTArticle* article = [RGTArticle new];
                          article.guid = item.guid;
                          article.title = item.title;
+                         article.link = item.link;
                          [articles addObject: article];
                      }
                      completionBlock(articles, nil);

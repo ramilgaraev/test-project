@@ -12,13 +12,15 @@
 		950569751DFFD3030096458D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950569731DFFD3030096458D /* Main.storyboard */; };
 		950569771DFFD3030096458D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 950569761DFFD3030096458D /* Assets.xcassets */; };
 		9505697A1DFFD3030096458D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950569781DFFD3030096458D /* LaunchScreen.storyboard */; };
+		955316531E03C9B800B95FFD /* RGTArticleContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955316521E03C9B800B95FFD /* RGTArticleContentViewController.m */; };
+		955316551E03E66900B95FFD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955316541E03E66900B95FFD /* WebKit.framework */; };
+		955316591E03F3DF00B95FFD /* RGTArticlesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 955316581E03F3DF00B95FFD /* RGTArticlesTableViewCell.m */; };
 		9557782C1E0281F1007EAA55 /* RGTArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9557782B1E0281F1007EAA55 /* RGTArticle.m */; };
 		9557782F1E028380007EAA55 /* RGTAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9557782E1E028380007EAA55 /* RGTAPIClient.m */; };
 		955778341E0293D6007EAA55 /* NSError+RGTErrorCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 955778331E0293D6007EAA55 /* NSError+RGTErrorCodes.m */; };
 		95F6BD4E1E02A24900E49486 /* RGTCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4D1E02A24900E49486 /* RGTCore.m */; };
 		95F6BD501E02BF3300E49486 /* RGTAPIClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */; };
 		95F6BD541E02DCD300E49486 /* RGTCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD531E02DCD300E49486 /* RGTCoreTests.m */; };
-		95F6BD571E02E36600E49486 /* RGTArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD561E02E36600E49486 /* RGTArticlesViewController.m */; };
 		95F6BD5D1E032A8700E49486 /* RGTArticlesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD5C1E032A8600E49486 /* RGTArticlesTableViewController.m */; };
 		BF3BF2AE80BCA2583186996C /* libPods-RGTestProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EB4F778FC32F4524913488 /* libPods-RGTestProject.a */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,11 @@
 		9505697B1DFFD3030096458D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		950569801DFFD3040096458D /* RGTestProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RGTestProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		950569861DFFD3040096458D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		955316511E03C9B800B95FFD /* RGTArticleContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTArticleContentViewController.h; sourceTree = "<group>"; };
+		955316521E03C9B800B95FFD /* RGTArticleContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticleContentViewController.m; sourceTree = "<group>"; };
+		955316541E03E66900B95FFD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		955316571E03F3DF00B95FFD /* RGTArticlesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTArticlesTableViewCell.h; sourceTree = "<group>"; };
+		955316581E03F3DF00B95FFD /* RGTArticlesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticlesTableViewCell.m; sourceTree = "<group>"; };
 		9557782A1E0281F1007EAA55 /* RGTArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTArticle.h; sourceTree = "<group>"; };
 		9557782B1E0281F1007EAA55 /* RGTArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticle.m; sourceTree = "<group>"; };
 		9557782D1E028380007EAA55 /* RGTAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTAPIClient.h; sourceTree = "<group>"; };
@@ -56,8 +63,6 @@
 		95F6BD4D1E02A24900E49486 /* RGTCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTCore.m; sourceTree = "<group>"; };
 		95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTAPIClientTests.m; sourceTree = "<group>"; };
 		95F6BD531E02DCD300E49486 /* RGTCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTCoreTests.m; sourceTree = "<group>"; };
-		95F6BD551E02E36600E49486 /* RGTArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTArticlesViewController.h; sourceTree = "<group>"; };
-		95F6BD561E02E36600E49486 /* RGTArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticlesViewController.m; sourceTree = "<group>"; };
 		95F6BD5B1E032A8600E49486 /* RGTArticlesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTArticlesTableViewController.h; sourceTree = "<group>"; };
 		95F6BD5C1E032A8600E49486 /* RGTArticlesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticlesTableViewController.m; sourceTree = "<group>"; };
 		B6167FFF3FABB918D4977A44 /* Pods-RGTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RGTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RGTestProject/Pods-RGTestProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955316551E03E66900B95FFD /* WebKit.framework in Frameworks */,
 				BF3BF2AE80BCA2583186996C /* libPods-RGTestProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +91,7 @@
 		593CEF90883E1E8AAAEAA279 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				955316541E03E66900B95FFD /* WebKit.framework */,
 				50EB4F778FC32F4524913488 /* libPods-RGTestProject.a */,
 			);
 			name = Frameworks;
@@ -141,6 +148,15 @@
 				95F6BD531E02DCD300E49486 /* RGTCoreTests.m */,
 			);
 			path = RGTestProjectTests;
+			sourceTree = "<group>";
+		};
+		955316561E03F3C200B95FFD /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				955316571E03F3DF00B95FFD /* RGTArticlesTableViewCell.h */,
+				955316581E03F3DF00B95FFD /* RGTArticlesTableViewCell.m */,
+			);
+			name = cells;
 			sourceTree = "<group>";
 		};
 		955778271E01575C007EAA55 /* BL layer */ = {
@@ -218,10 +234,11 @@
 		95F6BD5A1E02E52C00E49486 /* articles */ = {
 			isa = PBXGroup;
 			children = (
-				95F6BD551E02E36600E49486 /* RGTArticlesViewController.h */,
-				95F6BD561E02E36600E49486 /* RGTArticlesViewController.m */,
+				955316561E03F3C200B95FFD /* cells */,
 				95F6BD5B1E032A8600E49486 /* RGTArticlesTableViewController.h */,
 				95F6BD5C1E032A8600E49486 /* RGTArticlesTableViewController.m */,
+				955316511E03C9B800B95FFD /* RGTArticleContentViewController.h */,
+				955316521E03C9B800B95FFD /* RGTArticleContentViewController.m */,
 			);
 			name = articles;
 			sourceTree = "<group>";
@@ -392,11 +409,12 @@
 			files = (
 				95F6BD4E1E02A24900E49486 /* RGTCore.m in Sources */,
 				955778341E0293D6007EAA55 /* NSError+RGTErrorCodes.m in Sources */,
-				95F6BD571E02E36600E49486 /* RGTArticlesViewController.m in Sources */,
 				9505696F1DFFD3030096458D /* RGTAppDelegate.m in Sources */,
 				95F6BD5D1E032A8700E49486 /* RGTArticlesTableViewController.m in Sources */,
 				9557782C1E0281F1007EAA55 /* RGTArticle.m in Sources */,
+				955316531E03C9B800B95FFD /* RGTArticleContentViewController.m in Sources */,
 				9505696C1DFFD3030096458D /* main.m in Sources */,
+				955316591E03F3DF00B95FFD /* RGTArticlesTableViewCell.m in Sources */,
 				9557782F1E028380007EAA55 /* RGTAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

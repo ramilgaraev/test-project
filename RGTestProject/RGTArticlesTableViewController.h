@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RGTArticlesTableViewController : UITableViewController
+@interface RGTArticlesTableViewController : UITableViewController<UISplitViewControllerDelegate>
 
 @end

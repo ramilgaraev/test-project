@@ -15,6 +15,8 @@
 @property (nonatomic) NSString* guid;
 /*! @description A title of the article */
 @property (nonatomic) NSString* title;
+/*! @description A link of the article */
+@property (nonatomic) NSURL* link;
 /*! @description Content in HTML format (just copy of HTML page) */
 @property (nonatomic) NSString* htmlContent;
 
