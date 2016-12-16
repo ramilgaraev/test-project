@@ -86,7 +86,7 @@
 }
 
 
-#pragma mark 
+#pragma mark  
 
 -(BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
 {
