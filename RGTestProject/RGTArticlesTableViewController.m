@@ -24,6 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.splitViewController.delegate = self;
+    self.refreshControl = [UIRefreshControl new];
+    [self.refreshControl addTarget: self
+                            action: @selector(fetchNewArticles)
+                  forControlEvents: UIControlEventValueChanged];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -33,6 +37,19 @@
         if (!error)
         {
             _articles = [[RGTCore sharedInstance] articles];
+            [self.tableView reloadData];
+        }
+    }];
+}
+
+
+-(void) fetchNewArticles
+{
+    [[RGTCore sharedInstance] updateArticlesWithCompletionBlock: ^(NSError *error) {
+        if (!error)
+        {
+            _articles = [[RGTCore sharedInstance] articles];
+            [self.refreshControl endRefreshing];
             [self.tableView reloadData];
         }
     }];
