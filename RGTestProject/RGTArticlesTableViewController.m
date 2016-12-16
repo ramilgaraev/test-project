@@ -30,16 +30,17 @@
                             action: @selector(fetchNewArticles)
                   forControlEvents: UIControlEventValueChanged];
     [SVProgressHUD setCornerRadius: 8.0f];
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
     [SVProgressHUD setContainerView: self.view];
-    [SVProgressHUD showWithStatus:@"Обновляем.."];
+    [SVProgressHUD showWithStatus:@"Обновляем"];
     [[RGTCore sharedInstance] updateArticlesWithCompletionBlock: ^(NSError *error) {
         if (!error)
         {
             _articles = [[RGTCore sharedInstance] articles];
             [self.tableView reloadData];
-            [SVProgressHUD dismiss];
         }
+        else
+            [SVProgressHUD showErrorWithStatus:@"Проблемы со связью"];
+        [SVProgressHUD dismissWithDelay: 1.5];
     }];
 }
 

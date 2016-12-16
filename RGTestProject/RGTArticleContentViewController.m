@@ -41,14 +41,26 @@
     if (self.article)
     {
         [SVProgressHUD setContainerView: self.webView];
-        [SVProgressHUD showWithStatus:@"Загружаем.."];
+        [SVProgressHUD showWithStatus:@"Загружаем"];
         [self.webView loadRequest: [NSURLRequest requestWithURL: self.article.link]];
     }
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear: animated];
+    [SVProgressHUD dismiss];
 }
 
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
     [SVProgressHUD dismiss];
+}
+
+-(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
+{
+    [SVProgressHUD showErrorWithStatus:@"Проблемы со связью"];
+    [SVProgressHUD dismissWithDelay: 1.5];
 }
 
 @end
