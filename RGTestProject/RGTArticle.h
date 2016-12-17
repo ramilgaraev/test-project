@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
 /*! @description Class contains article from 4pda.ru */
-@interface RGTArticle : NSObject
+@interface RGTArticle : MTLModel
 
 /*! @description  Creation date of the article */
 @property (nonatomic) NSDate* publicationDate;
@@ -17,7 +18,5 @@
 @property (nonatomic) NSString* title;
 /*! @description A link of the article */
 @property (nonatomic) NSURL* link;
-/*! @description Content in HTML format (just copy of HTML page) */
-@property (nonatomic) NSString* htmlContent;
 
 @end

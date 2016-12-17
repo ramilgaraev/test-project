@@ -18,6 +18,7 @@
 		9557782C1E0281F1007EAA55 /* RGTArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9557782B1E0281F1007EAA55 /* RGTArticle.m */; };
 		9557782F1E028380007EAA55 /* RGTAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9557782E1E028380007EAA55 /* RGTAPIClient.m */; };
 		955778341E0293D6007EAA55 /* NSError+RGTErrorCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 955778331E0293D6007EAA55 /* NSError+RGTErrorCodes.m */; };
+		95789F8B1E044EA900FE3BFD /* RGTDatastore.m in Sources */ = {isa = PBXBuildFile; fileRef = 95789F8A1E044EA900FE3BFD /* RGTDatastore.m */; };
 		95F6BD4E1E02A24900E49486 /* RGTCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4D1E02A24900E49486 /* RGTCore.m */; };
 		95F6BD501E02BF3300E49486 /* RGTAPIClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */; };
 		95F6BD541E02DCD300E49486 /* RGTCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD531E02DCD300E49486 /* RGTCoreTests.m */; };
@@ -59,6 +60,8 @@
 		9557782E1E028380007EAA55 /* RGTAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTAPIClient.m; sourceTree = "<group>"; };
 		955778321E0293D6007EAA55 /* NSError+RGTErrorCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+RGTErrorCodes.h"; sourceTree = "<group>"; };
 		955778331E0293D6007EAA55 /* NSError+RGTErrorCodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+RGTErrorCodes.m"; sourceTree = "<group>"; };
+		95789F891E044EA900FE3BFD /* RGTDatastore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTDatastore.h; sourceTree = "<group>"; };
+		95789F8A1E044EA900FE3BFD /* RGTDatastore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTDatastore.m; sourceTree = "<group>"; };
 		95F6BD4C1E02A24900E49486 /* RGTCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTCore.h; sourceTree = "<group>"; };
 		95F6BD4D1E02A24900E49486 /* RGTCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTCore.m; sourceTree = "<group>"; };
 		95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTAPIClientTests.m; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		950569691DFFD3030096458D /* RGTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				95789F881E044E0800FE3BFD /* datastore layer */,
 				95F6BD511E02D61100E49486 /* UI layer */,
 				955778311E0293BC007EAA55 /* common */,
 				955778291E015809007EAA55 /* API layer */,
@@ -194,6 +198,15 @@
 				955778331E0293D6007EAA55 /* NSError+RGTErrorCodes.m */,
 			);
 			name = common;
+			sourceTree = "<group>";
+		};
+		95789F881E044E0800FE3BFD /* datastore layer */ = {
+			isa = PBXGroup;
+			children = (
+				95789F891E044EA900FE3BFD /* RGTDatastore.h */,
+				95789F8A1E044EA900FE3BFD /* RGTDatastore.m */,
+			);
+			name = "datastore layer";
 			sourceTree = "<group>";
 		};
 		95F6BD511E02D61100E49486 /* UI layer */ = {
@@ -410,6 +423,7 @@
 				95F6BD4E1E02A24900E49486 /* RGTCore.m in Sources */,
 				955778341E0293D6007EAA55 /* NSError+RGTErrorCodes.m in Sources */,
 				9505696F1DFFD3030096458D /* RGTAppDelegate.m in Sources */,
+				95789F8B1E044EA900FE3BFD /* RGTDatastore.m in Sources */,
 				95F6BD5D1E032A8700E49486 /* RGTArticlesTableViewController.m in Sources */,
 				9557782C1E0281F1007EAA55 /* RGTArticle.m in Sources */,
 				955316531E03C9B800B95FFD /* RGTArticleContentViewController.m in Sources */,
