@@ -18,5 +18,7 @@
 @property (nonatomic) NSString* title;
 /*! @description A link of the article */
 @property (nonatomic) NSURL* link;
+/*! @description HTML content of the article */
+@property (nonatomic) NSString* content;
 
 @end
