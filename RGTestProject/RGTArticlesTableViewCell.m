@@ -43,10 +43,13 @@
         [[RGTCore sharedInstance] downloadArticle: _article
                                    withCompletion:^(RGTArticle *downloadedArticle) {
                                        dispatch_async(dispatch_get_main_queue(), ^{
-                                           [self.activity stopAnimating];
-                                           self.actionButton.hidden = NO;
-                                           [self.actionButton setImage: [UIImage imageNamed: @"del"]
-                                                              forState: UIControlStateNormal];
+                                           if ([downloadedArticle isEqual: _article])
+                                           {
+                                               [self.activity stopAnimating];
+                                               self.actionButton.hidden = NO;
+                                               [self.actionButton setImage: [UIImage imageNamed: @"del"]
+                                                                  forState: UIControlStateNormal];
+                                           }
                                        });
                                    }];
     }
