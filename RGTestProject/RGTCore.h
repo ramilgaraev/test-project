@@ -15,10 +15,12 @@
 /*! @description Returns shared instance  */
 +(instancetype) sharedInstance;
 
-/*! @description Available articles */
-@property (readonly) NSArray<RGTArticle*>* articles;
-
-
+/*! @description  Async update articles from 4pda.ru and call completionBlock  */
 -(void) updateArticlesWithCompletionBlock: (void(^)(NSError* error, NSArray<RGTArticle*>* newArticles)) completionBlock;
+
+/*! @description  Async download article and call completionBlock after saving the article.  */
+-(void) downloadArticle: (RGTArticle*) article withCompletion: (void(^)(RGTArticle* downloadedArticle)) completionBlock;
+
+-(NSURL*) contentFileURLForArticle: (RGTArticle*) article;
 
 @end

@@ -19,6 +19,8 @@
 		9557782F1E028380007EAA55 /* RGTAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9557782E1E028380007EAA55 /* RGTAPIClient.m */; };
 		955778341E0293D6007EAA55 /* NSError+RGTErrorCodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 955778331E0293D6007EAA55 /* NSError+RGTErrorCodes.m */; };
 		95789F8B1E044EA900FE3BFD /* RGTDatastore.m in Sources */ = {isa = PBXBuildFile; fileRef = 95789F8A1E044EA900FE3BFD /* RGTDatastore.m */; };
+		95789F8E1E05351500FE3BFD /* RGTArticlesDownloder.m in Sources */ = {isa = PBXBuildFile; fileRef = 95789F8D1E05351500FE3BFD /* RGTArticlesDownloder.m */; };
+		95789F911E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 95789F901E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m */; };
 		95F6BD4E1E02A24900E49486 /* RGTCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4D1E02A24900E49486 /* RGTCore.m */; };
 		95F6BD501E02BF3300E49486 /* RGTAPIClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */; };
 		95F6BD541E02DCD300E49486 /* RGTCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD531E02DCD300E49486 /* RGTCoreTests.m */; };
@@ -62,6 +64,10 @@
 		955778331E0293D6007EAA55 /* NSError+RGTErrorCodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+RGTErrorCodes.m"; sourceTree = "<group>"; };
 		95789F891E044EA900FE3BFD /* RGTDatastore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTDatastore.h; sourceTree = "<group>"; };
 		95789F8A1E044EA900FE3BFD /* RGTDatastore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTDatastore.m; sourceTree = "<group>"; };
+		95789F8C1E05351500FE3BFD /* RGTArticlesDownloder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTArticlesDownloder.h; sourceTree = "<group>"; };
+		95789F8D1E05351500FE3BFD /* RGTArticlesDownloder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticlesDownloder.m; sourceTree = "<group>"; };
+		95789F8F1E0672B500FE3BFD /* NSMutableArray+RGTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+RGTAdditions.h"; sourceTree = "<group>"; };
+		95789F901E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+RGTAdditions.m"; sourceTree = "<group>"; };
 		95F6BD4C1E02A24900E49486 /* RGTCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTCore.h; sourceTree = "<group>"; };
 		95F6BD4D1E02A24900E49486 /* RGTCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTCore.m; sourceTree = "<group>"; };
 		95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTAPIClientTests.m; sourceTree = "<group>"; };
@@ -169,6 +175,8 @@
 				955778281E0157B6007EAA55 /* models */,
 				95F6BD4C1E02A24900E49486 /* RGTCore.h */,
 				95F6BD4D1E02A24900E49486 /* RGTCore.m */,
+				95789F8C1E05351500FE3BFD /* RGTArticlesDownloder.h */,
+				95789F8D1E05351500FE3BFD /* RGTArticlesDownloder.m */,
 			);
 			name = "BL layer";
 			sourceTree = "<group>";
@@ -196,6 +204,8 @@
 			children = (
 				955778321E0293D6007EAA55 /* NSError+RGTErrorCodes.h */,
 				955778331E0293D6007EAA55 /* NSError+RGTErrorCodes.m */,
+				95789F8F1E0672B500FE3BFD /* NSMutableArray+RGTAdditions.h */,
+				95789F901E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -424,10 +434,12 @@
 				955778341E0293D6007EAA55 /* NSError+RGTErrorCodes.m in Sources */,
 				9505696F1DFFD3030096458D /* RGTAppDelegate.m in Sources */,
 				95789F8B1E044EA900FE3BFD /* RGTDatastore.m in Sources */,
+				95789F8E1E05351500FE3BFD /* RGTArticlesDownloder.m in Sources */,
 				95F6BD5D1E032A8700E49486 /* RGTArticlesTableViewController.m in Sources */,
 				9557782C1E0281F1007EAA55 /* RGTArticle.m in Sources */,
 				955316531E03C9B800B95FFD /* RGTArticleContentViewController.m in Sources */,
 				9505696C1DFFD3030096458D /* main.m in Sources */,
+				95789F911E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m in Sources */,
 				955316591E03F3DF00B95FFD /* RGTArticlesTableViewCell.m in Sources */,
 				9557782F1E028380007EAA55 /* RGTAPIClient.m in Sources */,
 			);
@@ -573,6 +585,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rgaraev.RGTestProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -587,6 +600,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rgaraev.RGTestProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Настройки" id="Ppm-i0-oXp"/>
+                    <tabBarItem key="tabBarItem" title="Настройки" image="settings" id="Ppm-i0-oXp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nB-fT-rUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,32 +50,51 @@
         <scene sceneID="S5M-nn-uzb">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="8DX-YQ-7Rl" customClass="RGTArticlesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ceb-hp-x9L">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ceb-hp-x9L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RGTArticleCell" rowHeight="60" id="GQD-ir-kTh" customClass="RGTArticlesTableViewCell">
-                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RGTArticleCell" rowHeight="83" id="GQD-ir-kTh" customClass="RGTArticlesTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GQD-ir-kTh" id="pDL-r8-9Gh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jo-CP-68i">
-                                            <rect key="frame" x="8" y="20.5" width="359" height="19"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vta-xl-6RR">
+                                            <rect key="frame" x="325" y="22" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="BfW-WH-HEB"/>
+                                                <constraint firstAttribute="height" constant="40" id="jGd-7U-CYM"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="downloadArticle" destination="GQD-ir-kTh" eventType="touchUpInside" id="I2S-cp-vNw"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jo-CP-68i">
+                                            <rect key="frame" x="8" y="32" width="314" height="19"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="BXg-ET-8Zr">
+                                            <rect key="frame" x="335" y="32" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="7jo-CP-68i" firstAttribute="trailing" secondItem="pDL-r8-9Gh" secondAttribute="trailingMargin" id="6Jj-hk-VSN"/>
+                                        <constraint firstItem="7jo-CP-68i" firstAttribute="trailing" secondItem="pDL-r8-9Gh" secondAttribute="trailingMargin" constant="-45" id="6Jj-hk-VSN"/>
+                                        <constraint firstItem="BXg-ET-8Zr" firstAttribute="centerX" secondItem="Vta-xl-6RR" secondAttribute="centerX" id="KVy-U6-VFi"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Vta-xl-6RR" secondAttribute="trailing" constant="2" id="Ko9-q9-nlf"/>
+                                        <constraint firstItem="Vta-xl-6RR" firstAttribute="centerY" secondItem="7jo-CP-68i" secondAttribute="centerY" id="MK1-U3-BZk"/>
+                                        <constraint firstItem="BXg-ET-8Zr" firstAttribute="centerY" secondItem="Vta-xl-6RR" secondAttribute="centerY" id="NKr-Cb-5YK"/>
                                         <constraint firstItem="7jo-CP-68i" firstAttribute="centerY" secondItem="pDL-r8-9Gh" secondAttribute="centerY" id="Yz0-Aq-ibi"/>
                                         <constraint firstItem="7jo-CP-68i" firstAttribute="leading" secondItem="pDL-r8-9Gh" secondAttribute="leadingMargin" id="tA8-4X-3hE"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="actionButton" destination="Vta-xl-6RR" id="2fr-4l-d2f"/>
+                                    <outlet property="activity" destination="BXg-ET-8Zr" id="I8O-gZ-Sfk"/>
                                     <outlet property="titleLabel" destination="7jo-CP-68i" id="GwW-RN-WwK"/>
                                     <segue destination="XMl-5A-fGK" kind="showDetail" id="2sh-EM-NIf"/>
                                 </connections>
@@ -112,7 +131,7 @@
         <scene sceneID="2go-w5-GM6">
             <objects>
                 <splitViewController id="06t-V7-KE5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Новости" id="yXA-vy-YQU"/>
+                    <tabBarItem key="tabBarItem" title="Новости" image="news" id="yXA-vy-YQU"/>
                     <connections>
                         <segue destination="h70-IZ-7nT" kind="relationship" relationship="masterViewController" id="LNh-rD-OB1"/>
                         <segue destination="XMl-5A-fGK" kind="relationship" relationship="detailViewController" id="m15-gb-cON"/>
@@ -141,6 +160,10 @@
             <point key="canvasLocation" x="-1223" y="-204"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="news" width="32" height="32"/>
+        <image name="settings" width="32" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="m15-gb-cON"/>
     </inferredMetricsTieBreakers>

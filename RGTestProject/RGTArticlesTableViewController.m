@@ -12,10 +12,11 @@
 #import "RGTArticleContentViewController.h"
 #import "RGTArticlesTableViewCell.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "NSMutableArray+RGTAdditions.h"
 
 @interface RGTArticlesTableViewController ()
 {
-    NSArray<RGTArticle*>* _articles;
+    NSMutableArray<RGTArticle*>* _articles;
 }
 
 @end
@@ -31,16 +32,17 @@
                   forControlEvents: UIControlEventValueChanged];
     [SVProgressHUD setCornerRadius: 8.0f];
     [SVProgressHUD setContainerView: self.view];
+    _articles = [NSMutableArray array];
     [SVProgressHUD showWithStatus:@"Обновляем"];
     [[RGTCore sharedInstance] updateArticlesWithCompletionBlock: ^(NSError *error, NSArray<RGTArticle*>* newArticles) {
-        if (!error)
+        [self updateViewWithAddedArticles: newArticles];
+        if (error)
         {
-            _articles = [[RGTCore sharedInstance] articles];
-            [self.tableView reloadData];
+            [SVProgressHUD showErrorWithStatus:@"Проблемы со связью"];
+            [SVProgressHUD dismissWithDelay: 1.5];
         }
         else
-            [SVProgressHUD showErrorWithStatus:@"Проблемы со связью"];
-        [SVProgressHUD dismissWithDelay: 1.5];
+            [SVProgressHUD dismiss];
     }];
 }
 
@@ -50,19 +52,32 @@
     [[RGTCore sharedInstance] updateArticlesWithCompletionBlock: ^(NSError *error, NSArray<RGTArticle*>* newArticles) {
         if (!error)
         {
-            _articles = [[RGTCore sharedInstance] articles];
-            [self.refreshControl endRefreshing];
-            NSMutableArray* indexPathes = [NSMutableArray arrayWithCapacity: newArticles.count];
-            for (NSInteger i = 0; i < newArticles.count; i++) {
-                [indexPathes addObject: [NSIndexPath indexPathForRow: i
-                                                           inSection: 0]];
-            }
-            [self.tableView beginUpdates];
-            [self.tableView insertRowsAtIndexPaths: indexPathes
-                                  withRowAnimation: UITableViewRowAnimationFade];
-            [self.tableView endUpdates];
+            [self updateViewWithAddedArticles: newArticles];
         }
+        else
+        {
+            [SVProgressHUD showErrorWithStatus:@"Проблемы со связью"];
+            [SVProgressHUD dismissWithDelay: 1.5];
+        }
+        [self.refreshControl endRefreshing];
     }];
+}
+
+-(void) updateViewWithAddedArticles: (NSArray<RGTArticle*>*) articles
+{
+    if (articles.count > 0)
+    {
+        [_articles rgt_addToTheHeadObjectsFromArray: articles];
+        NSMutableArray* indexPathes = [NSMutableArray arrayWithCapacity: articles.count];
+        for (NSInteger i = 0; i < articles.count; i++) {
+            [indexPathes addObject: [NSIndexPath indexPathForRow: i
+                                                       inSection: 0]];
+        }
+        [self.tableView beginUpdates];
+        [self.tableView insertRowsAtIndexPaths: indexPathes
+                              withRowAnimation: UITableViewRowAnimationFade];
+        [self.tableView endUpdates];
+    }
 }
 
 

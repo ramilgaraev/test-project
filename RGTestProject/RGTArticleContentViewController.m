@@ -10,6 +10,7 @@
 #import "RGTArticle.h"
 @import WebKit;
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "RGTCore.h"
 
 @interface RGTArticleContentViewController ()<WKNavigationDelegate>
 
@@ -24,7 +25,6 @@
     self.webView = [[WKWebView alloc] initWithFrame: CGRectZero];
     [self.view addSubview: self.webView];
     [self.webView setNavigationDelegate: self];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,8 +41,18 @@
     if (self.article)
     {
         [SVProgressHUD setContainerView: self.webView];
-        [SVProgressHUD showWithStatus:@"Загружаем"];
-        [self.webView loadRequest: [NSURLRequest requestWithURL: self.article.link]];
+        if (!self.article.donwloaded)
+        {
+            [self.webView loadRequest: [NSURLRequest requestWithURL: self.article.link]];
+            [SVProgressHUD showWithStatus:@"Загружаем"];
+        }
+        else
+        {
+            [SVProgressHUD showWithStatus:@"Открываем"];
+            NSURL* url =  [[RGTCore sharedInstance] contentFileURLForArticle: self.article];
+            [self.webView loadFileURL: url
+              allowingReadAccessToURL: url];
+        }
     }
 }
 

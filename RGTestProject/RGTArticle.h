@@ -20,5 +20,8 @@
 @property (nonatomic) NSURL* link;
 /*! @description HTML content of the article */
 @property (nonatomic) NSString* content;
+/*! @description HTML content of the article */
+@property (nonatomic, getter=isDonwloaded) BOOL donwloaded;
+
 
 @end

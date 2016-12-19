@@ -8,17 +8,21 @@
 
 #import "RGTCore.h"
 #import "RGTAPIClient.h"
+#import "RGTDatastore.h"
+#import "RGTArticlesDownloder.h"
+#import "RGTArticle.h"
 
 @interface RGTCore()
 {
     NSDate* _lastArticlesFetchingDate;
+    RGTDatastore* _datastore;
+    RGTArticlesDownloder* _articlesDownloader;
+    NSArray* _articles;
 }
 
 @end
 
 @implementation RGTCore
-
-@synthesize articles = _articles;
 
 +(instancetype) sharedInstance
 {
@@ -35,6 +39,7 @@
     self = [super init];
     if (self)
     {
+        _datastore = [RGTDatastore new];
     }
     return self;
 }
@@ -46,23 +51,64 @@
 
 -(void) updateArticlesWithCompletionBlock: (void(^)(NSError* error, NSArray<RGTArticle*>* newArticles)) completionBlock
 {
-    [RGTAPIClient fetchNewArticlesSince: nil//_lastArticlesFetchingDate
+    [RGTAPIClient fetchNewArticlesSince: _lastArticlesFetchingDate
                          withCompletion:^(NSArray<RGTArticle *> * _Nullable fetchedArticles, NSError * _Nullable error) {
-                             if (error)
+                             NSMutableArray* resultArticles = [NSMutableArray array];
+                             NSArray<RGTArticle*>* offlineArticles;
+                             if (!_lastArticlesFetchingDate)
                              {
-                                 completionBlock(error, nil);
+                                 // we started the app & need to get offline articles
+                                 offlineArticles = [_datastore savedArticles];
+                                 [resultArticles addObjectsFromArray: offlineArticles];
                              }
-                             else
+                             if (!error)
                              {
-                                 if (fetchedArticles.count > 0)
+                                 // we recieved an answer from server
+                                 if (offlineArticles)
                                  {
-                                     _articles = [fetchedArticles arrayByAddingObjectsFromArray: _articles];
-                                     _lastArticlesFetchingDate = [NSDate date];
+                                     // need to join
+                                     for (RGTArticle* articleFromServer in fetchedArticles)
+                                     {
+                                         // for each article from server check existing offline duplicate
+                                         BOOL foundDuplicate = false;
+                                         NSInteger index =0;
+                                         while (!foundDuplicate && index < offlineArticles.count)
+                                         {
+                                             if ([articleFromServer isEqual: offlineArticles[index]])
+                                                 foundDuplicate = YES;
+                                             index++;
+                                         }
+                                         // if duplicate is not found add the article to the result array 
+                                         if (!foundDuplicate)
+                                             [resultArticles addObject: articleFromServer];
+                                     }
+                                     // sort
+                                     [resultArticles sortUsingComparator: ^NSComparisonResult(RGTArticle* article1, RGTArticle* article2) {
+                                         return [article1.publicationDate compare: article2.publicationDate];
+                                     }];
                                  }
-                                 completionBlock(nil, fetchedArticles);
+                                 _lastArticlesFetchingDate = [NSDate date];
                              }
-
+                             completionBlock(error, resultArticles);
                          }];
+}
+
+-(void) downloadArticle: (RGTArticle*) article withCompletion: (void(^)(RGTArticle* downloadedArticle)) completionBlock
+{
+    if (!_articlesDownloader)
+        _articlesDownloader = [[RGTArticlesDownloder alloc] initWithDatastore: _datastore];
+    [_articlesDownloader downloadArticle: article
+                          withCompletion:^(RGTArticle *downloadedArticle) {
+#warning todo update table
+                              completionBlock(downloadedArticle);
+                          }];
+}
+
+
+-(NSURL*) contentFileURLForArticle: (RGTArticle*) article
+{
+    NSURL* url = [NSURL fileURLWithPath: [_datastore pathToSavedContentOfArticle: article]];
+    return url;
 }
 
 @end

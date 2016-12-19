@@ -10,8 +10,8 @@
 #import <YapDatabase/YapDatabase.h>
 #import "RGTArticle.h"
 
-NSString* RGT_DB_PATH = @"4pda.db";
-NSString* RGT_ARTICLES_KEY = @"RGT_ARTICLES_KEY";
+static NSString* RGT_DB_PATH = @"4pda.db";
+static NSString* RGT_ARTICLES_KEY = @"RGT_ARTICLES_KEY";
 
 @interface RGTDatastore()
 {
@@ -35,6 +35,19 @@ NSString* RGT_ARTICLES_KEY = @"RGT_ARTICLES_KEY";
     return self;
 }
 
+
+-(NSString*) pathToSavedContentOfArticle: (RGTArticle*) article
+{
+    NSMutableString* fileName = [NSMutableString stringWithString: [[article.link absoluteString] substringFromIndex: 15]];
+    [fileName replaceOccurrencesOfString: @"/"
+                              withString: @""
+                                 options: NSCaseInsensitiveSearch
+                                   range: NSMakeRange(0, fileName.length)];
+    [fileName appendString:@".html"];
+    NSString* path =  [[self documentsDirPath] stringByAppendingPathComponent: fileName];
+    return path;
+}
+
 -(NSString*) documentsDirPath
 {
     NSString* documentsDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
@@ -54,8 +67,11 @@ NSString* RGT_ARTICLES_KEY = @"RGT_ARTICLES_KEY";
     return articles;
 }
 
--(void) saveArticle: (RGTArticle*) article
+-(void) saveArticle: (RGTArticle*) article withContentData: (NSData*) contentData
 {
+    [contentData writeToFile: [self pathToSavedContentOfArticle: article]
+                  atomically: YES];
+    NSError* error;
     NSString* key = [article.link absoluteString];
     [_connectionForWriting readWriteWithBlock:^(YapDatabaseReadWriteTransaction * _Nonnull transaction) {
         [transaction setObject: article

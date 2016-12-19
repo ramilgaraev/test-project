@@ -8,10 +8,13 @@
 
 #import "RGTArticlesTableViewCell.h"
 #import "RGTArticle.h"
+#import "RGTCore.h"
 
 @interface RGTArticlesTableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel* titleLabel;
+@property (weak, nonatomic) IBOutlet UIButton* actionButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView* activity;
 
 @end
 
@@ -22,7 +25,28 @@
 -(void)fillWithArticle:(RGTArticle *)article
 {
     _article = article;
+    [self.activity stopAnimating];
+     self.actionButton.hidden = NO;
+    UIImage* img = [UIImage imageNamed: _article.isDonwloaded ? @"del" : @"down"];
+    [self.actionButton setImage: img
+                       forState: UIControlStateNormal];
     self.titleLabel.text = _article.title;
+}
+
+
+-(IBAction) downloadArticle
+{
+    [self.activity startAnimating];
+    self.actionButton.hidden = YES;
+    [[RGTCore sharedInstance] downloadArticle: _article
+                               withCompletion:^(RGTArticle *downloadedArticle) {
+                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                       [self.activity stopAnimating];
+                                       self.actionButton.hidden = NO;
+                                       [self.actionButton setImage: [UIImage imageNamed: @"del"]
+                                                          forState: UIControlStateNormal];
+                                   });
+                               }];
 }
 
 @end

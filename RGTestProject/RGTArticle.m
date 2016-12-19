@@ -10,4 +10,10 @@
 
 @implementation RGTArticle
 
+-(BOOL) isEqual:(id)object
+{
+    return ([object isKindOfClass: [RGTArticle class]]
+            && [self.publicationDate isEqualToDate: ((RGTArticle*)object).publicationDate]);
+}
+
 @end
