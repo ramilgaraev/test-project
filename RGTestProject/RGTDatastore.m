@@ -9,9 +9,10 @@
 #import "RGTDatastore.h"
 #import <YapDatabase/YapDatabase.h>
 #import "RGTArticle.h"
+#import "RGTArticle+RGTDatastore.h"
 
 static NSString* RGT_DB_PATH = @"4pda.db";
-static NSString* RGT_ARTICLES_KEY = @"RGT_ARTICLES_KEY";
+static NSString* RGT_ARTICLES_COLLECTION_KEY = @"RGT_ARTICLES_COLLECTION_KEY";
 
 @interface RGTDatastore()
 {
@@ -58,7 +59,7 @@ static NSString* RGT_ARTICLES_KEY = @"RGT_ARTICLES_KEY";
 {
     __block NSMutableArray* articles = [NSMutableArray array];
     [_connectionForReading readWithBlock:^(YapDatabaseReadTransaction * transaction) {
-        [transaction enumerateKeysAndObjectsInCollection: RGT_ARTICLES_KEY
+        [transaction enumerateKeysAndObjectsInCollection: RGT_ARTICLES_COLLECTION_KEY
                                               usingBlock:^(NSString * _Nonnull key, id  _Nonnull object, BOOL * _Nonnull stop) {
                                                   [articles addObject: object];
                                               }
@@ -71,19 +72,37 @@ static NSString* RGT_ARTICLES_KEY = @"RGT_ARTICLES_KEY";
 {
     [contentData writeToFile: [self pathToSavedContentOfArticle: article]
                   atomically: YES];
-    NSError* error;
-    NSString* key = [article.link absoluteString];
     [_connectionForWriting readWriteWithBlock:^(YapDatabaseReadWriteTransaction * _Nonnull transaction) {
         [transaction setObject: article
-                        forKey: key
-                  inCollection: RGT_ARTICLES_KEY
+                        forKey: article.dbKey
+                  inCollection: RGT_ARTICLES_COLLECTION_KEY
                   withMetadata: nil];
+    }];
+}
+
+-(void)deleteArticle:(RGTArticle *)article
+{
+    [[NSFileManager defaultManager] removeItemAtPath: [self pathToSavedContentOfArticle: article]
+                                               error: nil];
+    [_connectionForWriting asyncReadWriteWithBlock: ^(YapDatabaseReadWriteTransaction * _Nonnull transaction) {
+        [transaction removeObjectForKey: article.dbKey
+                           inCollection: RGT_ARTICLES_COLLECTION_KEY];
     }];
 }
 
 -(void) deleteArticlesWithPublicationDateBefore: (NSDate*) date
 {
-
+    __block NSMutableArray* articles = [NSMutableArray array];
+    [_connectionForReading readWithBlock: ^(YapDatabaseReadTransaction * _Nonnull transaction) {
+        [transaction enumerateKeysAndObjectsInCollection: RGT_ARTICLES_COLLECTION_KEY
+                                              usingBlock:^(NSString * key, RGTArticle* article, BOOL * stop) {
+                                                  if ([article.publicationDate compare: date] == NSOrderedDescending)
+                                                      [articles addObject: article];
+                                              }];
+        for (RGTArticle* article in articles) {
+            [self deleteArticle: article];
+        }
+    }];
 }
 
 @end

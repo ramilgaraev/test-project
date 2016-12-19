@@ -21,6 +21,8 @@
 /*! @description  Async download article and call completionBlock after saving the article.  */
 -(void) downloadArticle: (RGTArticle*) article withCompletion: (void(^)(RGTArticle* downloadedArticle)) completionBlock;
 
+-(void) deleteArticle: (RGTArticle*) article;
+
 -(NSURL*) contentFileURLForArticle: (RGTArticle*) article;
 
 @end

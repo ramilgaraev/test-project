@@ -12,6 +12,7 @@
 		950569751DFFD3030096458D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950569731DFFD3030096458D /* Main.storyboard */; };
 		950569771DFFD3030096458D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 950569761DFFD3030096458D /* Assets.xcassets */; };
 		9505697A1DFFD3030096458D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950569781DFFD3030096458D /* LaunchScreen.storyboard */; };
+		95107A641E085E5C00937B03 /* RGTArticle+RGTDatastore.m in Sources */ = {isa = PBXBuildFile; fileRef = 95107A631E085E5C00937B03 /* RGTArticle+RGTDatastore.m */; };
 		955316531E03C9B800B95FFD /* RGTArticleContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955316521E03C9B800B95FFD /* RGTArticleContentViewController.m */; };
 		955316551E03E66900B95FFD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955316541E03E66900B95FFD /* WebKit.framework */; };
 		955316591E03F3DF00B95FFD /* RGTArticlesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 955316581E03F3DF00B95FFD /* RGTArticlesTableViewCell.m */; };
@@ -51,6 +52,8 @@
 		9505697B1DFFD3030096458D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		950569801DFFD3040096458D /* RGTestProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RGTestProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		950569861DFFD3040096458D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95107A621E085E5C00937B03 /* RGTArticle+RGTDatastore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RGTArticle+RGTDatastore.h"; sourceTree = "<group>"; };
+		95107A631E085E5C00937B03 /* RGTArticle+RGTDatastore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RGTArticle+RGTDatastore.m"; sourceTree = "<group>"; };
 		955316511E03C9B800B95FFD /* RGTArticleContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTArticleContentViewController.h; sourceTree = "<group>"; };
 		955316521E03C9B800B95FFD /* RGTArticleContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticleContentViewController.m; sourceTree = "<group>"; };
 		955316541E03E66900B95FFD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -215,6 +218,8 @@
 			children = (
 				95789F891E044EA900FE3BFD /* RGTDatastore.h */,
 				95789F8A1E044EA900FE3BFD /* RGTDatastore.m */,
+				95107A621E085E5C00937B03 /* RGTArticle+RGTDatastore.h */,
+				95107A631E085E5C00937B03 /* RGTArticle+RGTDatastore.m */,
 			);
 			name = "datastore layer";
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				95F6BD5D1E032A8700E49486 /* RGTArticlesTableViewController.m in Sources */,
 				9557782C1E0281F1007EAA55 /* RGTArticle.m in Sources */,
 				955316531E03C9B800B95FFD /* RGTArticleContentViewController.m in Sources */,
+				95107A641E085E5C00937B03 /* RGTArticle+RGTDatastore.m in Sources */,
 				9505696C1DFFD3030096458D /* main.m in Sources */,
 				95789F911E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m in Sources */,
 				955316591E03F3DF00B95FFD /* RGTArticlesTableViewCell.m in Sources */,

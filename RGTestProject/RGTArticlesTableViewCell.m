@@ -26,7 +26,7 @@
 {
     _article = article;
     [self.activity stopAnimating];
-     self.actionButton.hidden = _article.isDonwloaded;
+    self.actionButton.hidden = NO;
     UIImage* img = [UIImage imageNamed: _article.isDonwloaded ? @"del" : @"down"];
     [self.actionButton setImage: img
                        forState: UIControlStateNormal];
@@ -36,8 +36,16 @@
 
 -(IBAction) changeStatusOfArticle
 {
-    if (!_article.isDonwloaded)
+    if (_article.isDonwloaded)
     {
+        // delete
+        [[RGTCore sharedInstance] deleteArticle: _article];
+        [self.actionButton setImage: [UIImage imageNamed: @"down"]
+                           forState: UIControlStateNormal];
+    }
+    else
+    {
+        // download
         [self.activity startAnimating];
         self.actionButton.hidden = YES;
         [[RGTCore sharedInstance] downloadArticle: _article

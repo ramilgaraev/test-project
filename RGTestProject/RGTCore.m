@@ -104,6 +104,11 @@
                           }];
 }
 
+-(void)deleteArticle:(RGTArticle *)article
+{
+    [_datastore deleteArticle: article];
+}
+
 
 -(NSURL*) contentFileURLForArticle: (RGTArticle*) article
 {
