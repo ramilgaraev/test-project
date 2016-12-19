@@ -26,7 +26,7 @@
 {
     _article = article;
     [self.activity stopAnimating];
-     self.actionButton.hidden = NO;
+     self.actionButton.hidden = _article.isDonwloaded;
     UIImage* img = [UIImage imageNamed: _article.isDonwloaded ? @"del" : @"down"];
     [self.actionButton setImage: img
                        forState: UIControlStateNormal];
@@ -34,19 +34,22 @@
 }
 
 
--(IBAction) downloadArticle
+-(IBAction) changeStatusOfArticle
 {
-    [self.activity startAnimating];
-    self.actionButton.hidden = YES;
-    [[RGTCore sharedInstance] downloadArticle: _article
-                               withCompletion:^(RGTArticle *downloadedArticle) {
-                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                       [self.activity stopAnimating];
-                                       self.actionButton.hidden = NO;
-                                       [self.actionButton setImage: [UIImage imageNamed: @"del"]
-                                                          forState: UIControlStateNormal];
-                                   });
-                               }];
+    if (!_article.isDonwloaded)
+    {
+        [self.activity startAnimating];
+        self.actionButton.hidden = YES;
+        [[RGTCore sharedInstance] downloadArticle: _article
+                                   withCompletion:^(RGTArticle *downloadedArticle) {
+                                       dispatch_async(dispatch_get_main_queue(), ^{
+                                           [self.activity stopAnimating];
+                                           self.actionButton.hidden = NO;
+                                           [self.actionButton setImage: [UIImage imageNamed: @"del"]
+                                                              forState: UIControlStateNormal];
+                                       });
+                                   }];
+    }
 }
 
 @end

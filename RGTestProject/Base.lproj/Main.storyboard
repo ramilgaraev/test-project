@@ -69,7 +69,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="jGd-7U-CYM"/>
                                             </constraints>
                                             <connections>
-                                                <action selector="downloadArticle" destination="GQD-ir-kTh" eventType="touchUpInside" id="I2S-cp-vNw"/>
+                                                <action selector="changeStatusOfArticle" destination="GQD-ir-kTh" eventType="touchUpInside" id="idx-UX-ZEu"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jo-CP-68i">
@@ -165,6 +165,6 @@
         <image name="settings" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m15-gb-cON"/>
+        <segue reference="2sh-EM-NIf"/>
     </inferredMetricsTieBreakers>
 </document>
