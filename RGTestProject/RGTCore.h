@@ -29,6 +29,7 @@
 /*! @description  Async change download state article.  */
 -(void) changeDownloadStateOfArticle: (RGTArticle*) article;
 
+/*! @description  URL to the file with cached content of the article.  */
 -(NSURL*) contentFileURLForArticle: (RGTArticle*) article;
 
 @end

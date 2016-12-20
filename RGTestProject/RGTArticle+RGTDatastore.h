@@ -8,8 +8,10 @@
 
 #import "RGTArticle.h"
 
+/*! @description  Category for article contains db routine  */
 @interface RGTArticle(RGTDataStore)
 
+/*! @description  Returns unique key for store */
 -(NSString*) dbKey;
 
 @end

@@ -14,13 +14,13 @@
 
 /*! @description  Returns all saved articles */
 -(NSArray< RGTArticle*>*) savedArticles;
-/*! @description  Save givwn article */
+/*! @description  Save given article */
 -(void) saveArticle: (RGTArticle*) article withContentData: (NSData*) contentData;
-/*! @description  Delete givwn article */
+/*! @description  Delete given article */
 -(void) deleteArticle: (RGTArticle*) article;
 /*! @description  Delete old articles  */
 -(void) deleteArticlesWithPublicationDateBefore: (NSDate*) date;
-
+/*! @description  Returns path to file with saved artivle content  */
 -(NSString*) pathToSavedContentOfArticle: (RGTArticle*) article;
 
 @end

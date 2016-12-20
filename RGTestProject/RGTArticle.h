@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
 
+/*! @description  Represents state of downloading of the article */
 typedef  NS_ENUM(NSUInteger, RGTArticleState)
 {
     RGTArticleStateIsNotDownloaded,
@@ -25,7 +26,7 @@ typedef  NS_ENUM(NSUInteger, RGTArticleState)
 @property (nonatomic) NSString* title;
 /*! @description A link of the article */
 @property (nonatomic) NSURL* link;
-/*! @description  state of downloadjng of the article */
+/*! @description  state of downloading of the article */
 @property (nonatomic) RGTArticleState state;
 
 

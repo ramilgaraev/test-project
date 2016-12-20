@@ -10,6 +10,7 @@
 #import "RGTArticlesDownloder.h"
 #import "RGTArticle.h"
 #import "RGTDatastore.h"
+#import "RGTAPIClient.h"
 
 @interface RGTArticlesDownloder()
 {
@@ -32,15 +33,12 @@
     return self;
 }
 
--(void)downloadArticle:(RGTArticle *)article withCompletion:(void (^)(RGTArticle *downloadedArticle))completionBlock
+-(void)downloadArticleContent:(RGTArticle *)article withCompletion:(void (^)(RGTArticle *downloadedArticle))completionBlock
 {
     [_operationQueue addOperationWithBlock:^{
-        NSError* error;
-        NSData *data = [NSData dataWithContentsOfURL: article.link
-                                             options: NSDataReadingUncached
-                                               error: &error];
 
-        if (!error)
+        NSData *data = [RGTAPIClient downloadContentDataForArticle: article];
+        if (data)
         {
             article.state = RGTArticleStateIsDownloaded;
             [_dataStore saveArticle: article
@@ -49,8 +47,8 @@
         }
         else
         {
-            [self downloadArticle: article
-                   withCompletion: completionBlock];
+            [self downloadArticleContent: article
+                          withCompletion: completionBlock];
         }
     }];
 }

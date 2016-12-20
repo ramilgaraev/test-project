@@ -27,9 +27,9 @@
 
 - (void)testUpdateArticles{
     XCTestExpectation* exp = [self expectationWithDescription:@"testUpdateArticles"];
-    [[RGTCore sharedInstance] updateArticlesWithCompletionBlock:^(NSError *error) {
+    [[RGTCore sharedInstance] updateArticlesWithCompletionBlock:^(NSError *error, NSArray<RGTArticle *> *newArticles) {
         [exp fulfill];
-        XCTAssertNotNil([[RGTCore sharedInstance] articles]);
+        XCTAssertNotNil(newArticles);
     }];
     [self waitForExpectationsWithTimeout: 30 handler:^(NSError * _Nullable error) {
         XCTAssertNil(error, @"connection problems");

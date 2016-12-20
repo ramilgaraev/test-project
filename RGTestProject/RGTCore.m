@@ -102,10 +102,10 @@
             [self.delegate updatePresentationForArticle: article];
             if (!_articlesDownloader)
                 _articlesDownloader = [[RGTArticlesDownloder alloc] initWithDatastore: _datastore];
-            [_articlesDownloader downloadArticle: article
-                                  withCompletion:^(RGTArticle *downloadedArticle) {
-                                      [self.delegate updatePresentationForArticle: downloadedArticle];
-                                  }];
+            [_articlesDownloader downloadArticleContent: article
+                                         withCompletion: ^(RGTArticle *downloadedArticle) {
+                                             [self.delegate updatePresentationForArticle: downloadedArticle];
+                                         }];
             break;
     }
 }

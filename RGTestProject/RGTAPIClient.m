@@ -41,9 +41,11 @@ static NSString* RSSURL = @"http://4pda.ru/feed";
                  }];
 }
 
-+(void) downloadContentForArticle: (RGTArticle* _Nonnull) article withCompletionBlock: (RGTDownloadContentOfArticleCompletionBlock _Nonnull) completionBlock
++(NSData* _Nullable) downloadContentDataForArticle: (RGTArticle* _Nonnull) article
 {
-#warning todo
+    return  [NSData dataWithContentsOfURL: article.link
+                                  options: NSDataReadingUncached
+                                    error: nil];
 }
 
 @end
