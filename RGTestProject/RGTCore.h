@@ -9,8 +9,16 @@
 #import <Foundation/Foundation.h>
 @class RGTArticle;
 
+@protocol RGTCoreDelegate
+
+-(void) updatePresentationForArticle: (RGTArticle*) article;
+
+@end
+
 /*! @description Business logic class */
 @interface RGTCore : NSObject
+
+@property (nonatomic, weak) id<RGTCoreDelegate> delegate;
 
 /*! @description Returns shared instance  */
 +(instancetype) sharedInstance;
@@ -18,10 +26,8 @@
 /*! @description  Async update articles from 4pda.ru and call completionBlock  */
 -(void) updateArticlesWithCompletionBlock: (void(^)(NSError* error, NSArray<RGTArticle*>* newArticles)) completionBlock;
 
-/*! @description  Async download article and call completionBlock after saving the article.  */
--(void) downloadArticle: (RGTArticle*) article withCompletion: (void(^)(RGTArticle* downloadedArticle)) completionBlock;
-
--(void) deleteArticle: (RGTArticle*) article;
+/*! @description  Async change download state article.  */
+-(void) changeDownloadStateOfArticle: (RGTArticle*) article;
 
 -(NSURL*) contentFileURLForArticle: (RGTArticle*) article;
 

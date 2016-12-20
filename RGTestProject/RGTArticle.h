@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
 
+typedef  NS_ENUM(NSUInteger, RGTArticleState)
+{
+    RGTArticleStateIsNotDownloaded,
+    RGTArticleStateIsDownloading,
+    RGTArticleStateIsDownloaded
+};
+
 /*! @description Class contains article from 4pda.ru */
 @interface RGTArticle : MTLModel
 
@@ -18,10 +25,9 @@
 @property (nonatomic) NSString* title;
 /*! @description A link of the article */
 @property (nonatomic) NSURL* link;
-/*! @description HTML content of the article */
-@property (nonatomic) NSString* content;
-/*! @description HTML content of the article */
-@property (nonatomic, getter=isDonwloaded) BOOL donwloaded;
+/*! @description  state of downloadjng of the article */
+@property (nonatomic) RGTArticleState state;
+
 
 
 @end

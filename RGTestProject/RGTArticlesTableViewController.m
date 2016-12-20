@@ -14,7 +14,7 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "NSMutableArray+RGTAdditions.h"
 
-@interface RGTArticlesTableViewController ()
+@interface RGTArticlesTableViewController ()<RGTArticlesTableViewCellDelegate, RGTCoreDelegate>
 {
     NSMutableArray<RGTArticle*>* _articles;
 }
@@ -34,6 +34,7 @@
     [SVProgressHUD setContainerView: self.view];
     _articles = [NSMutableArray array];
     [SVProgressHUD showWithStatus:@"Обновляем"];
+    [RGTCore sharedInstance].delegate = self;
     [[RGTCore sharedInstance] updateArticlesWithCompletionBlock: ^(NSError *error, NSArray<RGTArticle*>* newArticles) {
         [self updateViewWithAddedArticles: newArticles];
         if (error)
@@ -96,7 +97,14 @@
     RGTArticlesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"RGTArticleCell"
                                                             forIndexPath: indexPath];
     [cell fillWithArticle: _articles[indexPath.row]];
+    cell.delegate = self;
     return cell;
+}
+
+-(RGTArticle*) articleInCell: (RGTArticlesTableViewCell*) cell
+{
+    NSUInteger index = [[self.tableView indexPathForCell: cell] row];
+    return _articles[index];
 }
 
 
@@ -105,11 +113,18 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     RGTArticleContentViewController* vc = (RGTArticleContentViewController*)segue.destinationViewController;
-    vc.article = [(RGTArticlesTableViewCell*)sender article];
+    vc.article = [self articleInCell: sender];
 }
 
 
-#pragma mark  
+#pragma mark split view controller delegate methods
+
+-(void)actionButtonPressedInCell:(RGTArticlesTableViewCell *)cell
+{
+     [[RGTCore sharedInstance] changeDownloadStateOfArticle:[self articleInCell: cell]];
+}
+
+#pragma mark split view controller delegate methods
 
 -(BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
 {
@@ -117,6 +132,23 @@
         return YES;
     else
         return NO;
+}
+
+#pragma mark Core delegate methods
+
+-(void)updatePresentationForArticle:(RGTArticle *)article
+{
+    NSArray<NSIndexPath*>* indexpaths = [self.tableView indexPathsForVisibleRows];
+    NSUInteger articleIndex = [_articles indexOfObject: article];
+    [_articles replaceObjectAtIndex: articleIndex
+                         withObject: article];
+    // check if need to redraw
+    if (([indexpaths firstObject].row <= articleIndex) && (articleIndex <= [indexpaths lastObject].row ))
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadRowsAtIndexPaths: @[[NSIndexPath indexPathForRow: articleIndex
+                                                                         inSection: 0]]
+                                  withRowAnimation: UITableViewRowAnimationNone];
+        });
 }
 
 

@@ -42,7 +42,7 @@
 
         if (!error)
         {
-            article.donwloaded = YES;
+            article.state = RGTArticleStateIsDownloaded;
             [_dataStore saveArticle: article
                     withContentData: data];
             completionBlock(article);

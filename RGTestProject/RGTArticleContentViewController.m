@@ -41,17 +41,17 @@
     if (self.article)
     {
         [SVProgressHUD setContainerView: self.webView];
-        if (!self.article.donwloaded)
-        {
-            [self.webView loadRequest: [NSURLRequest requestWithURL: self.article.link]];
-            [SVProgressHUD showWithStatus:@"Загружаем"];
-        }
-        else
+        if (self.article.state == RGTArticleStateIsDownloaded)
         {
             [SVProgressHUD showWithStatus:@"Открываем"];
             NSURL* url =  [[RGTCore sharedInstance] contentFileURLForArticle: self.article];
             [self.webView loadFileURL: url
               allowingReadAccessToURL: url];
+        }
+        else
+        {
+            [self.webView loadRequest: [NSURLRequest requestWithURL: self.article.link]];
+            [SVProgressHUD showWithStatus:@"Загружаем"];
         }
     }
 }

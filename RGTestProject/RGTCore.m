@@ -17,9 +17,7 @@
     NSDate* _lastArticlesFetchingDate;
     RGTDatastore* _datastore;
     RGTArticlesDownloder* _articlesDownloader;
-    NSArray* _articles;
 }
-
 @end
 
 @implementation RGTCore
@@ -42,11 +40,6 @@
         _datastore = [RGTDatastore new];
     }
     return self;
-}
-
--(NSArray<RGTArticle *> *)articles
-{
-    return _articles;
 }
 
 -(void) updateArticlesWithCompletionBlock: (void(^)(NSError* error, NSArray<RGTArticle*>* newArticles)) completionBlock
@@ -93,20 +86,28 @@
                          }];
 }
 
--(void) downloadArticle: (RGTArticle*) article withCompletion: (void(^)(RGTArticle* downloadedArticle)) completionBlock
+-(void)changeDownloadStateOfArticle:(RGTArticle *)article
 {
-    if (!_articlesDownloader)
-        _articlesDownloader = [[RGTArticlesDownloder alloc] initWithDatastore: _datastore];
-    [_articlesDownloader downloadArticle: article
-                          withCompletion:^(RGTArticle *downloadedArticle) {
-#warning todo update table
-                              completionBlock(downloadedArticle);
-                          }];
-}
-
--(void)deleteArticle:(RGTArticle *)article
-{
-    [_datastore deleteArticle: article];
+    switch (article.state)
+    {
+        case RGTArticleStateIsDownloading:
+            break;
+        case RGTArticleStateIsDownloaded:
+            article.state = RGTArticleStateIsNotDownloaded;
+            [self.delegate updatePresentationForArticle: article];
+            [_datastore deleteArticle: article];
+            break;
+        case RGTArticleStateIsNotDownloaded:
+            article.state = RGTArticleStateIsDownloading;
+            [self.delegate updatePresentationForArticle: article];
+            if (!_articlesDownloader)
+                _articlesDownloader = [[RGTArticlesDownloder alloc] initWithDatastore: _datastore];
+            [_articlesDownloader downloadArticle: article
+                                  withCompletion:^(RGTArticle *downloadedArticle) {
+                                      [self.delegate updatePresentationForArticle: downloadedArticle];
+                                  }];
+            break;
+    }
 }
 
 

@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 @class  RGTArticle;
+@class RGTArticlesTableViewCell;
+
+@protocol RGTArticlesTableViewCellDelegate
+
+-(void) actionButtonPressedInCell: (RGTArticlesTableViewCell*) cell;
+
+@end
 
 @interface RGTArticlesTableViewCell : UITableViewCell
 
-@property (nonatomic, readonly) RGTArticle* article;
+@property (nonatomic, weak) id<RGTArticlesTableViewCellDelegate> delegate;
 
 -(void) fillWithArticle: (RGTArticle*) article;
 
