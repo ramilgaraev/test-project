@@ -23,8 +23,7 @@
 		95789F8E1E05351500FE3BFD /* RGTArticlesDownloder.m in Sources */ = {isa = PBXBuildFile; fileRef = 95789F8D1E05351500FE3BFD /* RGTArticlesDownloder.m */; };
 		95789F911E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 95789F901E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m */; };
 		95F6BD4E1E02A24900E49486 /* RGTCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4D1E02A24900E49486 /* RGTCore.m */; };
-		95F6BD501E02BF3300E49486 /* RGTAPIClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */; };
-		95F6BD541E02DCD300E49486 /* RGTCoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD531E02DCD300E49486 /* RGTCoreTests.m */; };
+		95F6BD541E02DCD300E49486 /* RGTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD531E02DCD300E49486 /* RGTTests.m */; };
 		95F6BD5D1E032A8700E49486 /* RGTArticlesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD5C1E032A8600E49486 /* RGTArticlesTableViewController.m */; };
 		BF3BF2AE80BCA2583186996C /* libPods-RGTestProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EB4F778FC32F4524913488 /* libPods-RGTestProject.a */; };
 /* End PBXBuildFile section */
@@ -73,8 +72,7 @@
 		95789F901E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+RGTAdditions.m"; sourceTree = "<group>"; };
 		95F6BD4C1E02A24900E49486 /* RGTCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTCore.h; sourceTree = "<group>"; };
 		95F6BD4D1E02A24900E49486 /* RGTCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTCore.m; sourceTree = "<group>"; };
-		95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTAPIClientTests.m; sourceTree = "<group>"; };
-		95F6BD531E02DCD300E49486 /* RGTCoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTCoreTests.m; sourceTree = "<group>"; };
+		95F6BD531E02DCD300E49486 /* RGTTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTTests.m; sourceTree = "<group>"; };
 		95F6BD5B1E032A8600E49486 /* RGTArticlesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTArticlesTableViewController.h; sourceTree = "<group>"; };
 		95F6BD5C1E032A8600E49486 /* RGTArticlesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticlesTableViewController.m; sourceTree = "<group>"; };
 		B6167FFF3FABB918D4977A44 /* Pods-RGTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RGTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RGTestProject/Pods-RGTestProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,8 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				950569861DFFD3040096458D /* Info.plist */,
-				95F6BD4F1E02BF3300E49486 /* RGTAPIClientTests.m */,
-				95F6BD531E02DCD300E49486 /* RGTCoreTests.m */,
+				95F6BD531E02DCD300E49486 /* RGTTests.m */,
 			);
 			path = RGTestProjectTests;
 			sourceTree = "<group>";
@@ -455,8 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F6BD541E02DCD300E49486 /* RGTCoreTests.m in Sources */,
-				95F6BD501E02BF3300E49486 /* RGTAPIClientTests.m in Sources */,
+				95F6BD541E02DCD300E49486 /* RGTTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
