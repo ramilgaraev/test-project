@@ -57,7 +57,7 @@ static NSString* RGT_ARTICLES_COLLECTION_KEY = @"RGT_ARTICLES_COLLECTION_KEY";
 
 -(NSArray< RGTArticle*>*) savedArticles
 {
-    __block NSMutableArray* articles = [NSMutableArray array];
+    NSMutableArray* articles = [NSMutableArray array];
     [_connectionForReading readWithBlock:^(YapDatabaseReadTransaction * transaction) {
         [transaction enumerateKeysAndObjectsInCollection: RGT_ARTICLES_COLLECTION_KEY
                                               usingBlock:^(NSString * _Nonnull key, id  _Nonnull object, BOOL * _Nonnull stop) {
@@ -92,7 +92,7 @@ static NSString* RGT_ARTICLES_COLLECTION_KEY = @"RGT_ARTICLES_COLLECTION_KEY";
 
 -(void) deleteArticlesWithPublicationDateBefore: (NSDate*) date
 {
-    __block NSMutableArray* articles = [NSMutableArray array];
+    NSMutableArray* articles = [NSMutableArray array];
     [_connectionForReading readWithBlock: ^(YapDatabaseReadTransaction * _Nonnull transaction) {
         [transaction enumerateKeysAndObjectsInCollection: RGT_ARTICLES_COLLECTION_KEY
                                               usingBlock:^(NSString * key, RGTArticle* article, BOOL * stop) {
