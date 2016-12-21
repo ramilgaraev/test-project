@@ -47,7 +47,6 @@
     }];
 }
 
-
 -(void) fetchNewArticles
 {
     [[RGTCore sharedInstance] updateArticlesWithCompletionBlock: ^(NSError *error, NSArray<RGTArticle*>* newArticles) {

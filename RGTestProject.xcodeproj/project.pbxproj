@@ -22,9 +22,13 @@
 		95789F8B1E044EA900FE3BFD /* RGTDatastore.m in Sources */ = {isa = PBXBuildFile; fileRef = 95789F8A1E044EA900FE3BFD /* RGTDatastore.m */; };
 		95789F8E1E05351500FE3BFD /* RGTArticlesDownloder.m in Sources */ = {isa = PBXBuildFile; fileRef = 95789F8D1E05351500FE3BFD /* RGTArticlesDownloder.m */; };
 		95789F911E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 95789F901E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m */; };
+		95AE2EAD1E0982E500542CCA /* RGTAssistantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AE2EAB1E0982E500542CCA /* RGTAssistantViewController.m */; };
+		95AE2EAE1E0982E500542CCA /* RGTAssistantViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AE2EAC1E0982E500542CCA /* RGTAssistantViewController.xib */; };
 		95F6BD4E1E02A24900E49486 /* RGTCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD4D1E02A24900E49486 /* RGTCore.m */; };
 		95F6BD541E02DCD300E49486 /* RGTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD531E02DCD300E49486 /* RGTTests.m */; };
 		95F6BD5D1E032A8700E49486 /* RGTArticlesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F6BD5C1E032A8600E49486 /* RGTArticlesTableViewController.m */; };
+		95FDB7741E0986570037216A /* AssistantImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95FDB7731E0986570037216A /* AssistantImages.xcassets */; };
+		95FDB7771E098DED0037216A /* RGTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FDB7761E098DED0037216A /* RGTRootViewController.m */; };
 		BF3BF2AE80BCA2583186996C /* libPods-RGTestProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EB4F778FC32F4524913488 /* libPods-RGTestProject.a */; };
 /* End PBXBuildFile section */
 
@@ -70,11 +74,17 @@
 		95789F8D1E05351500FE3BFD /* RGTArticlesDownloder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticlesDownloder.m; sourceTree = "<group>"; };
 		95789F8F1E0672B500FE3BFD /* NSMutableArray+RGTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+RGTAdditions.h"; sourceTree = "<group>"; };
 		95789F901E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+RGTAdditions.m"; sourceTree = "<group>"; };
+		95AE2EAA1E0982E500542CCA /* RGTAssistantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTAssistantViewController.h; sourceTree = "<group>"; };
+		95AE2EAB1E0982E500542CCA /* RGTAssistantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTAssistantViewController.m; sourceTree = "<group>"; };
+		95AE2EAC1E0982E500542CCA /* RGTAssistantViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RGTAssistantViewController.xib; sourceTree = "<group>"; };
 		95F6BD4C1E02A24900E49486 /* RGTCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTCore.h; sourceTree = "<group>"; };
 		95F6BD4D1E02A24900E49486 /* RGTCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTCore.m; sourceTree = "<group>"; };
 		95F6BD531E02DCD300E49486 /* RGTTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTTests.m; sourceTree = "<group>"; };
 		95F6BD5B1E032A8600E49486 /* RGTArticlesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTArticlesTableViewController.h; sourceTree = "<group>"; };
 		95F6BD5C1E032A8600E49486 /* RGTArticlesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTArticlesTableViewController.m; sourceTree = "<group>"; };
+		95FDB7731E0986570037216A /* AssistantImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssistantImages.xcassets; sourceTree = "<group>"; };
+		95FDB7751E098DED0037216A /* RGTRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTRootViewController.h; sourceTree = "<group>"; };
+		95FDB7761E098DED0037216A /* RGTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTRootViewController.m; sourceTree = "<group>"; };
 		B6167FFF3FABB918D4977A44 /* Pods-RGTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RGTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RGTestProject/Pods-RGTestProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,13 +231,31 @@
 			name = "datastore layer";
 			sourceTree = "<group>";
 		};
+		95AE2EA81E0982AB00542CCA /* views */ = {
+			isa = PBXGroup;
+			children = (
+				95AE2EAC1E0982E500542CCA /* RGTAssistantViewController.xib */,
+				950569731DFFD3030096458D /* Main.storyboard */,
+				950569781DFFD3030096458D /* LaunchScreen.storyboard */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		95AE2EA91E0982BD00542CCA /* assistant */ = {
+			isa = PBXGroup;
+			children = (
+				95AE2EAA1E0982E500542CCA /* RGTAssistantViewController.h */,
+				95AE2EAB1E0982E500542CCA /* RGTAssistantViewController.m */,
+			);
+			name = assistant;
+			sourceTree = "<group>";
+		};
 		95F6BD511E02D61100E49486 /* UI layer */ = {
 			isa = PBXGroup;
 			children = (
+				95AE2EA81E0982AB00542CCA /* views */,
 				95F6BD581E02E51300E49486 /* controllers */,
 				95F6BD521E02D62B00E49486 /* mediafiles */,
-				950569731DFFD3030096458D /* Main.storyboard */,
-				950569781DFFD3030096458D /* LaunchScreen.storyboard */,
 			);
 			name = "UI layer";
 			sourceTree = "<group>";
@@ -236,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				950569761DFFD3030096458D /* Assets.xcassets */,
+				95FDB7731E0986570037216A /* AssistantImages.xcassets */,
 			);
 			name = mediafiles;
 			sourceTree = "<group>";
@@ -243,8 +272,11 @@
 		95F6BD581E02E51300E49486 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				95AE2EA91E0982BD00542CCA /* assistant */,
 				95F6BD5A1E02E52C00E49486 /* articles */,
 				95F6BD591E02E52500E49486 /* settings */,
+				95FDB7751E098DED0037216A /* RGTRootViewController.h */,
+				95FDB7761E098DED0037216A /* RGTRootViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -365,7 +397,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9505697A1DFFD3030096458D /* LaunchScreen.storyboard in Resources */,
+				95AE2EAE1E0982E500542CCA /* RGTAssistantViewController.xib in Resources */,
 				950569771DFFD3030096458D /* Assets.xcassets in Resources */,
+				95FDB7741E0986570037216A /* AssistantImages.xcassets in Resources */,
 				950569751DFFD3030096458D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,11 +471,13 @@
 				9505696F1DFFD3030096458D /* RGTAppDelegate.m in Sources */,
 				95789F8B1E044EA900FE3BFD /* RGTDatastore.m in Sources */,
 				95789F8E1E05351500FE3BFD /* RGTArticlesDownloder.m in Sources */,
+				95AE2EAD1E0982E500542CCA /* RGTAssistantViewController.m in Sources */,
 				95F6BD5D1E032A8700E49486 /* RGTArticlesTableViewController.m in Sources */,
 				9557782C1E0281F1007EAA55 /* RGTArticle.m in Sources */,
 				955316531E03C9B800B95FFD /* RGTArticleContentViewController.m in Sources */,
 				95107A641E085E5C00937B03 /* RGTArticle+RGTDatastore.m in Sources */,
 				9505696C1DFFD3030096458D /* main.m in Sources */,
+				95FDB7771E098DED0037216A /* RGTRootViewController.m in Sources */,
 				95789F911E0672B500FE3BFD /* NSMutableArray+RGTAdditions.m in Sources */,
 				955316591E03F3DF00B95FFD /* RGTArticlesTableViewCell.m in Sources */,
 				9557782F1E028380007EAA55 /* RGTAPIClient.m in Sources */,
