@@ -34,7 +34,7 @@
 {
     XCTestExpectation* exp = [self expectationWithDescription:@"testFetchNewArticles"];
     [RGTAPIClient fetchNewArticlesSince: nil
-                         withCompletion:^(NSArray<RGTArticle *> * _Nullable fetchedArticles, NSError * _Nullable error) {
+                         withCompletion: ^(NSArray<RGTArticle *> * _Nullable fetchedArticles, NSError * _Nullable error) {
                              [exp fulfill];
                              XCTAssertNil(error);
                              if (!error)

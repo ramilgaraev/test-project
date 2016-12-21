@@ -11,6 +11,7 @@
 #import "RGTDatastore.h"
 #import "RGTArticlesDownloder.h"
 #import "RGTArticle.h"
+#import "NSMutableArray+RGTAdditions.h"
 
 @interface RGTCore()
 {
@@ -52,35 +53,44 @@
                              {
                                  // we started the app & need to get offline articles
                                  offlineArticles = [_datastore savedArticles];
-                                 [resultArticles addObjectsFromArray: offlineArticles];
-                             }
-                             if (!error)
-                             {
-                                 // we recieved an answer from server
                                  if (offlineArticles)
                                  {
-                                     // need to join
-                                     for (RGTArticle* articleFromServer in fetchedArticles)
+                                     [resultArticles addObjectsFromArray: offlineArticles];
+                                     if (!error)
                                      {
-                                         // for each article from server check existing offline duplicate
-                                         BOOL foundDuplicate = false;
-                                         NSInteger index =0;
-                                         while (!foundDuplicate && index < offlineArticles.count)
+                                         // we recived new articles and need to join
+                                         _lastArticlesFetchingDate = [NSDate date];
+                                         for (RGTArticle* articleFromServer in fetchedArticles)
                                          {
-                                             if ([articleFromServer isEqual: offlineArticles[index]])
-                                                 foundDuplicate = YES;
-                                             index++;
+                                             // for each article from server check existing offline duplicate
+                                             BOOL foundDuplicate = false;
+                                             NSInteger index = 0;
+                                             while (!foundDuplicate && index < offlineArticles.count)
+                                             {
+                                                 if ([articleFromServer isEqual: offlineArticles[index]])
+                                                     foundDuplicate = YES;
+                                                 index++;
+                                             }
+                                             // if duplicate is not found add the article to the result array
+                                             if (!foundDuplicate)
+                                                 [resultArticles addObject: articleFromServer];
                                          }
-                                         // if duplicate is not found add the article to the result array 
-                                         if (!foundDuplicate)
-                                             [resultArticles addObject: articleFromServer];
+                                         // sort
+                                         [resultArticles sortUsingComparator: ^NSComparisonResult(RGTArticle* article1, RGTArticle* article2) {
+                                             return [article1.publicationDate compare: article2.publicationDate];
+                                         }];
                                      }
-                                     // sort
-                                     [resultArticles sortUsingComparator: ^NSComparisonResult(RGTArticle* article1, RGTArticle* article2) {
-                                         return [article1.publicationDate compare: article2.publicationDate];
-                                     }];
                                  }
-                                 _lastArticlesFetchingDate = [NSDate date];
+                             }
+                             else
+                             {
+                                 // no saved articles
+                                 if (!error)
+                                 {
+                                     // simply add new articles
+                                     _lastArticlesFetchingDate = [NSDate date];
+                                     [resultArticles rgt_addToTheHeadObjectsFromArray: fetchedArticles];
+                                 }
                              }
                              completionBlock(error, resultArticles);
                          }];
