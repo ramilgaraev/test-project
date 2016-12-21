@@ -56,6 +56,7 @@
 -(void)updatePresentationForArticle:(RGTArticle *)article
 {
     XCTAssertNotNil([_core contentFileURLForArticle: article], @"Article was not downloaded");
+    [_core changeDownloadStateOfArticle: article];
 }
 
 @end
