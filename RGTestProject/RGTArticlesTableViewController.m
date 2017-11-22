@@ -137,18 +137,14 @@
 
 -(void)updatePresentationForArticle:(RGTArticle *)article
 {
-    NSArray<NSIndexPath*>* indexpaths = [self.tableView indexPathsForVisibleRows];
     NSUInteger articleIndex = [_articles indexOfObject: article];
     [_articles replaceObjectAtIndex: articleIndex
                          withObject: article];
-    // check if need to redraw
-    if (([indexpaths firstObject].row <= articleIndex) && (articleIndex <= [indexpaths lastObject].row ))
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadRowsAtIndexPaths: @[[NSIndexPath indexPathForRow: articleIndex
                                                                          inSection: 0]]
                                   withRowAnimation: UITableViewRowAnimationNone];
         });
 }
-
 
 @end
